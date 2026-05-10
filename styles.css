@@ -69,7 +69,7 @@ button:focus-visible,
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 
 .hero-overlay {
@@ -104,10 +104,10 @@ button:focus-visible,
 
 .brand-logo,
 .footer-logo {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 1.25rem;
   border: 1px solid rgba(200, 168, 130, 0.25);
   background: #a39c90;
 }
@@ -144,12 +144,12 @@ button:focus-visible,
 .hero-grid {
   display: grid;
   gap: 3rem;
-  align-items: center;
+  align-items: top;
   padding: 4rem 0 2rem;
 }
 
 .hero-copy h1 {
-  margin: 1.5rem 0 1rem;
+  margin: 1rem 0 1rem;
   font-size: clamp(2.75rem, 4vw, 4.75rem);
   line-height: 0.95;
   letter-spacing: 0;
@@ -292,6 +292,10 @@ button:focus-visible,
   align-items: start;
 }
 
+#que-es .section-grid {
+  align-items: center;
+}
+
 .split-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
@@ -328,6 +332,35 @@ button:focus-visible,
 .section-dark .section-text,
 .feature-panel p {
   color: rgba(216, 200, 184, 0.95);
+}
+
+.feature-list {
+  display: grid;
+  gap: 0.85rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-muted);
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.feature-list strong {
+  color: var(--text);
 }
 
 .note-box,
@@ -460,6 +493,52 @@ button:focus-visible,
   font-size: 0.82rem;
 }
 
+#en-vivo .feature-box {
+  border-color: rgba(139, 94, 60, 0.28);
+  background: #fbf8f2;
+  color: var(--text);
+  box-shadow: 0 24px 60px rgba(44, 26, 14, 0.12);
+}
+
+#en-vivo .feature-heading {
+  align-items: flex-start;
+}
+
+#en-vivo .feature-heading h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.18rem;
+}
+
+#en-vivo .feature-heading p {
+  margin: 0.35rem 0 0;
+  color: var(--text-muted);
+}
+
+#en-vivo .feature-icon {
+  flex: 0 0 auto;
+  background: rgba(139, 94, 60, 0.12);
+  color: var(--accent);
+}
+
+#en-vivo .feature-panel {
+  margin-top: 1.5rem;
+  border: 1px solid rgba(139, 94, 60, 0.16);
+  background: #efe7dc;
+  color: var(--text);
+}
+
+#en-vivo .feature-panel p {
+  margin: 1.1rem 0 0;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+#en-vivo .feature-status-grid {
+  color: var(--text);
+  font-weight: 700;
+}
+
 .field-section {
   overflow: hidden;
 }
@@ -506,14 +585,27 @@ button:focus-visible,
   padding: 1.75rem;
   border: 1px solid rgba(200, 168, 130, 0.22);
   border-radius: 0.5rem;
-  background: rgba(245, 242, 238, 0.95);
+  background: rgba(255, 255, 255, 0.1);
   color: var(--text-muted);
   text-align: center;
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.18);
 }
 
+.partner-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
 .conservation-logo {
-  width: min(100%, 15rem);
+  width: min(100%, 12rem);
+  height: auto;
+}
+
+.fme-logo {
+  width: min(100%, 10rem);
   height: auto;
 }
 
@@ -637,6 +729,7 @@ button:focus-visible,
 
 .footer-section {
   padding: 4rem 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-center {
