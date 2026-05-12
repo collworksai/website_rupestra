@@ -14,28 +14,27 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="brand-group">
+      <img src="logos/logo_rupestra_cruz.png" alt="Logo de Rupestra" class="brand-logo" />
+      <div>
+        <div class="brand-title">Rupestra</div>
+        <p class="brand-subtitle">documentación visual rupestre</p>
+      </div>
+    </div>
+    <nav class="hero-nav" aria-label="Navegación principal">
+      <a href="#que-es">Qué es</a>
+      <a href="#para">Para quién</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#en-vivo">En vivo</a>
+      <a href="#porque">Por qué</a>
+      <a href="#agradecimientos">Agradecimientos</a>
+    </nav>
+  </header>
   <main class="page">
     <section class="hero section-dark">
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
-        <header class="site-header">
-          <div class="brand-group">
-            <img src="logos/logo_rupestra_cruz.png" alt="Logo de Rupestra" class="brand-logo" />
-            <div>
-              <div class="brand-title">Rupestra</div>
-              <p class="brand-subtitle">documentación visual rupestre</p>
-            </div>
-          </div>
-          <nav class="hero-nav" aria-label="Navegación principal">
-            <a href="#que-es">Qué es</a>
-            <a href="#para">Para quién</a>
-            <a href="#como-funciona">Cómo funciona</a>
-            <a href="#en-vivo">En vivo</a>
-            <a href="#porque">Por qué</a>
-            <a href="#agradecimientos">Agradecimientos</a>
-          </nav>
-        </header>
-
         <div class="hero-grid">
           <div class="hero-copy">
             <span class="availability-chip">Próximamente en App Store</span>
@@ -107,6 +106,7 @@
       <div class="container">
         <p class="section-label">Para quién está pensada</p>
         <h2>Diseñada para quienes documentan sobre roca.</h2>
+        <p></p>
         <div class="card-grid">
           <article class="feature-card">
             <div class="icon-box" aria-hidden="true">
@@ -365,11 +365,14 @@
     <section id="agradecimientos" class="section section-alt">
       <div class="container">
         <p class="section-label">Agradecimientos</p>
-        <img src="imagenes/pedro_coll.jpg" alt="Retrato de Pedro Collado" class="acknowledgement-photo" />
-        <p>Rupestra no nace de una idea aislada, sino de muchas salidas, observaciones, conversaciones y necesidades compartidas en campo.</p>
-        <p>Gracias a los miembros de la Comisión de Conservación de Cavidades de la Comunidad de Madrid por su trabajo, criterio y compromiso con la documentación y conservación del patrimonio subterráneo.</p>
-        <h3>Miembros de la Comisión de Conservación de Cavidades</h3>
-        <p>Nombre Apellido · Nombre Apellido · Nombre Apellido · Nombre Apellido</p>
+        <div class="acknowledgement-layout">
+          <img src="imagenes/pedro_coll.jpg" alt="Retrato de Pedro Coll" class="acknowledgement-photo" />
+          <div class="acknowledgement-copy">
+            <p>Rupestra ha ido tomando forma gracias a muchas conversaciones, pruebas en campo, comentarios y necesidades compartidas.</p>
+            <p>Gracias a los miembros de la Comisión de Conservación de Cavidades de la Comunidad de Madrid por su paciencia, sus ideas, su tiempo y su disposición a probar, cuestionar y mejorar cada parte del proyecto.</p>
+            <p>Este trabajo se apoya en una mirada colectiva: la experiencia de campo, el criterio técnico y el compromiso con la documentación y conservación del patrimonio subterráneo.</p>
+          </div>
+        </div>
       </div>
     </section>
     <section class="section-dark footer-section">
@@ -383,6 +386,42 @@
     </section>
   </main>
   <script>
+    const siteHeader = document.querySelector(".site-header");
+    let lastScrollY = window.scrollY;
+    let headerHasFocus = false;
+
+    function updateHeaderVisibility() {
+      if (!siteHeader) {
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+      const isScrollingDown = currentScrollY > lastScrollY;
+
+      siteHeader.classList.toggle("is-scrolled", currentScrollY > 24);
+
+      if (headerHasFocus || currentScrollY < 120) {
+        siteHeader.classList.remove("is-hidden");
+      } else {
+        siteHeader.classList.toggle("is-hidden", isScrollingDown);
+      }
+
+      lastScrollY = Math.max(currentScrollY, 0);
+    }
+
+    siteHeader?.addEventListener("focusin", () => {
+      headerHasFocus = true;
+      siteHeader.classList.remove("is-hidden");
+    });
+
+    siteHeader?.addEventListener("focusout", () => {
+      headerHasFocus = false;
+      updateHeaderVisibility();
+    });
+
+    window.addEventListener("scroll", updateHeaderVisibility, { passive: true });
+    updateHeaderVisibility();
+
     const carouselTrack = document.querySelector("[data-carousel-track]");
     const carouselCards = Array.from(document.querySelectorAll(".field-card"));
     const carouselDots = Array.from(document.querySelectorAll("[data-carousel-dot]"));
