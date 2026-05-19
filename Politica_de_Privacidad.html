@@ -14,24 +14,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700;800&display=swap" />
+  <script>try{if(localStorage.getItem("rupestra-lang")==="en")document.documentElement.classList.add("lang-loading")}catch(e){}</script>
   <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js"></script>
 </head>
-<body>
-  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+<body data-i18n-page="privacy">
+  <a href="#main-content" class="skip-link" data-i18n="skip-link">Saltar al contenido</a>
   <header class="site-header">
-    <a class="brand-group" href="index.html" aria-label="Volver a la página principal de Rupestra">
-      <img src="logos/rupestra_logo_app.png" alt="Logo de Rupestra" class="brand-logo" />
+    <a class="brand-group" href="index.html" data-i18n-aria="aria.brand-back" aria-label="Volver a la página principal de Rupestra">
+      <img src="logos/rupestra_logo_app.png" data-i18n-alt="alt.logo" alt="Logo de Rupestra" class="brand-logo" />
       <div>
         <div class="brand-title">Rupestra</div>
-        <p class="brand-subtitle">documentación visual rupestre</p>
+        <p class="brand-subtitle" data-i18n="brand-subtitle">documentación visual rupestre</p>
       </div>
     </a>
-    <nav class="hero-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="index.html">Inicio</a>
-      <a href="index.html#que-es">Qué es</a>
-      <a href="index.html#como-funciona">Cómo funciona</a>
-      <a href="index.html#agradecimientos">Agradecimientos</a>
+    <nav class="hero-nav" id="main-nav" data-i18n-aria="aria.nav" aria-label="Navegación principal">
+      <a href="index.html" data-i18n="nav.inicio">Inicio</a>
+      <a href="index.html#que-es" data-i18n="nav.p.que-es">Qué es</a>
+      <a href="index.html#como-funciona" data-i18n="nav.p.como-funciona">Cómo funciona</a>
+      <a href="index.html#agradecimientos" data-i18n="nav.p.agradecimientos">Agradecimientos</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Selección de idioma" data-i18n-aria="aria.lang-switch">
+      <button class="lang-switch-btn is-active" type="button" data-lang="es" aria-pressed="true" onclick="rupestra.setLang('es')">ES</button>
+      <button class="lang-switch-btn" type="button" data-lang="en" aria-pressed="false" onclick="rupestra.setLang('en')">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
@@ -43,139 +49,139 @@
     <section class="section section-light legal-page-content">
       <div class="container legal-content">
         <header class="legal-header">
-          <p class="section-label">Rupestra</p>
-          <h1>Política de Privacidad</h1>
-          <p class="legal-updated">Última actualización: 17 de mayo de 2026</p>
-          <p class="legal-intro">Rupestra es una aplicación de análisis de arte rupestre desarrollada por Collworks. Esta política explica qué datos recopila la aplicación, cómo los utiliza y los derechos que tienes como usuario.</p>
+          <p class="section-label" data-i18n="privacy.label">Rupestra</p>
+          <h1 data-i18n="privacy.h1">Política de Privacidad</h1>
+          <p class="legal-updated" data-i18n="privacy.updated">Última actualización: 17 de mayo de 2026</p>
+          <p class="legal-intro" data-i18n="privacy.intro">Rupestra es una aplicación de análisis de arte rupestre desarrollada por Collworks. Esta política explica qué datos recopila la aplicación, cómo los utiliza y los derechos que tienes como usuario.</p>
           <div class="note-box legal-principle">
-            <strong>Principio fundamental</strong>
-            <p>Rupestra funciona completamente en tu dispositivo. No enviamos, almacenamos ni procesamos tus datos en ningún servidor externo. No existe registro de cuenta ni inicio de sesión.</p>
+            <strong data-i18n="privacy.principle.strong">Principio fundamental</strong>
+            <p data-i18n="privacy.principle.p">Rupestra funciona completamente en tu dispositivo. No enviamos, almacenamos ni procesamos tus datos en ningún servidor externo. No existe registro de cuenta ni inicio de sesión.</p>
           </div>
         </header>
         <section>
-          <h2>Datos que recopila la aplicación</h2>
-          <p>Rupestra accede a los siguientes datos exclusivamente para su funcionamiento local:</p>
+          <h2 data-i18n="privacy.data.h2">Datos que recopila la aplicación</h2>
+          <p data-i18n="privacy.data.intro">Rupestra accede a los siguientes datos exclusivamente para su funcionamiento local:</p>
 
-          <h3>1. Cámara</h3>
+          <h3 data-i18n="privacy.camera.h3">1. Cámara</h3>
           <ul>
-            <li>Para fotografiar arte rupestre y realizar análisis en tiempo real (Live Scan).</li>
-            <li>Las imágenes capturadas se almacenan únicamente en tu dispositivo, en el almacenamiento local de la app.</li>
+            <li data-i18n="privacy.camera.li1">Para fotografiar arte rupestre y realizar análisis en tiempo real (Live Scan).</li>
+            <li data-i18n="privacy.camera.li2">Las imágenes capturadas se almacenan únicamente en tu dispositivo, en el almacenamiento local de la app.</li>
           </ul>
 
-          <h3>2. Galería de fotos</h3>
+          <h3 data-i18n="privacy.gallery.h3">2. Galería de fotos</h3>
           <ul>
-            <li>Para seleccionar imágenes existentes y analizarlas.</li>
-            <li>Al cargar una foto, la app extrae los metadatos EXIF (apertura, ISO, longitud focal, modelo de cámara y lente). Si la foto contiene coordenadas GPS embebidas, estas también se extraen y almacenan en el registro de análisis.</li>
-            <li>Los resultados del análisis pueden guardarse en tu galería de fotos si lo solicitas explícitamente.</li>
+            <li data-i18n="privacy.gallery.li1">Para seleccionar imágenes existentes y analizarlas.</li>
+            <li data-i18n="privacy.gallery.li2">Al cargar una foto, la app extrae los metadatos EXIF (apertura, ISO, longitud focal, modelo de cámara y lente). Si la foto contiene coordenadas GPS embebidas, estas también se extraen y almacenan en el registro de análisis.</li>
+            <li data-i18n="privacy.gallery.li3">Los resultados del análisis pueden guardarse en tu galería de fotos si lo solicitas explícitamente.</li>
           </ul>
 
-          <h3>3. Micrófono</h3>
+          <h3 data-i18n="privacy.mic.h3">3. Micrófono</h3>
           <ul>
-            <li>Para grabar notas de voz sobre el yacimiento.</li>
-            <li>Las grabaciones se almacenan localmente como archivos de audio (M4A).</li>
+            <li data-i18n="privacy.mic.li1">Para grabar notas de voz sobre el yacimiento.</li>
+            <li data-i18n="privacy.mic.li2">Las grabaciones se almacenan localmente como archivos de audio (M4A).</li>
           </ul>
 
-          <h3>4. Reconocimiento de voz</h3>
+          <h3 data-i18n="privacy.speech.h3">4. Reconocimiento de voz</h3>
           <ul>
-            <li>Para transcribir las notas de voz a texto.</li>
-            <li>La transcripción se realiza en el dispositivo mediante el motor de reconocimiento de voz de Apple (SFSpeechRecognizer, idioma español). El audio no se envía a ningún servidor.</li>
+            <li data-i18n="privacy.speech.li1">Para transcribir las notas de voz a texto.</li>
+            <li data-i18n="privacy.speech.li2">La transcripción se realiza en el dispositivo mediante el motor de reconocimiento de voz de Apple (SFSpeechRecognizer, idioma español). El audio no se envía a ningún servidor.</li>
           </ul>
 
-          <h3>5. Ubicación (GPS)</h3>
+          <h3 data-i18n="privacy.gps.h3">5. Ubicación (GPS)</h3>
           <ul>
-            <li>Para registrar las coordenadas geográficas del yacimiento en el informe.</li>
-            <li>Se captura latitud, longitud, altitud y orientación (norte verdadero).</li>
-            <li>Se utiliza la geocodificación inversa de Apple para obtener la localidad y región del yacimiento.</li>
-            <li>La ubicación solo se solicita cuando el usuario lo autoriza explícitamente.</li>
+            <li data-i18n="privacy.gps.li1">Para registrar las coordenadas geográficas del yacimiento en el informe.</li>
+            <li data-i18n="privacy.gps.li2">Se captura latitud, longitud, altitud y orientación (norte verdadero).</li>
+            <li data-i18n="privacy.gps.li3">Se utiliza la geocodificación inversa de Apple para obtener la localidad y región del yacimiento.</li>
+            <li data-i18n="privacy.gps.li4">La ubicación solo se solicita cuando el usuario lo autoriza explícitamente.</li>
           </ul>
 
-          <h3>6. Brújula</h3>
+          <h3 data-i18n="privacy.compass.h3">6. Brújula</h3>
           <ul>
-            <li>Para capturar la orientación (norte verdadero) del yacimiento.</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Almacenamiento de datos</h2>
-          <p>Todos los datos se almacenan exclusivamente en tu dispositivo:</p>
-          <ul>
-            <li><strong>Base de datos local:</strong> metadatos de sesiones (nombre del sitio, coordenadas, notas, datos EXIF, tipo de pigmento, resultados del análisis).</li>
-            <li><strong>Archivos en el dispositivo:</strong> imágenes de análisis (JPEG), notas de voz (M4A), miniaturas.</li>
-            <li><strong>Preferencias locales:</strong> parámetros de calibración de detección de pigmentos.</li>
-          </ul>
-          <p>Ningún dato se sube a la nube, se sincroniza con servidores externos ni se comparte con terceros de forma automática.</p>
-        </section>
-
-        <section>
-          <h2>Informes PDF</h2>
-          <p>Rupestra genera informes en formato PDF que incluyen:</p>
-          <ul>
-            <li>Nombre y ubicación del yacimiento (coordenadas, altitud, localidad).</li>
-            <li>Imágenes del análisis (original, resaltado, calco, decorrelación PCA).</li>
-            <li>Metadatos de la fotografía (apertura, ISO, focal, dispositivo).</li>
-            <li>Notas del usuario.</li>
-          </ul>
-          <p><strong>Importante:</strong> si compartes un PDF exportado, el destinatario podrá ver toda la información contenida en el informe, incluyendo las coordenadas GPS del yacimiento. Comparte estos informes solo con personas de tu confianza.</p>
-        </section>
-
-        <section>
-          <h2>Datos que no recopilamos</h2>
-          <ul>
-            <li>No recopilamos datos de uso ni analíticas.</li>
-            <li>No utilizamos identificadores publicitarios (IDFA).</li>
-            <li>No registramos direcciones IP.</li>
-            <li>No utilizamos cookies ni tecnologías de seguimiento.</li>
-            <li>No compartimos datos con terceros.</li>
-            <li>No almacenamos datos en servidores propios ni de terceros.</li>
-            <li>No requerimos registro de cuenta ni inicio de sesión.</li>
+            <li data-i18n="privacy.compass.li1">Para capturar la orientación (norte verdadero) del yacimiento.</li>
           </ul>
         </section>
 
         <section>
-          <h2>Servicios de terceros</h2>
-          <p>Rupestra no integra ningún SDK, librería ni servicio de terceros. Utiliza exclusivamente frameworks nativos de Apple (SwiftUI, AVFoundation, CoreImage, CoreLocation, Speech, Photos, SwiftData).</p>
-          <p>Los únicos servicios externos invocados son APIs del sistema operativo iOS:</p>
+          <h2 data-i18n="privacy.storage.h2">Almacenamiento de datos</h2>
+          <p data-i18n="privacy.storage.intro">Todos los datos se almacenan exclusivamente en tu dispositivo:</p>
           <ul>
-            <li><strong>Geocodificación inversa</strong> (CLGeocoder de Apple): convierte coordenadas GPS en nombres de localidad. Sujeta a la <a href="https://www.apple.com/legal/privacy/">Política de Privacidad de Apple</a>.</li>
-            <li><strong>Reconocimiento de voz</strong> (SFSpeechRecognizer de Apple): transcribe audio a texto en el dispositivo.</li>
+            <li data-i18n-html="privacy.storage.li1"><strong>Base de datos local:</strong> metadatos de sesiones (nombre del sitio, coordenadas, notas, datos EXIF, tipo de pigmento, resultados del análisis).</li>
+            <li data-i18n-html="privacy.storage.li2"><strong>Archivos en el dispositivo:</strong> imágenes de análisis (JPEG), notas de voz (M4A), miniaturas.</li>
+            <li data-i18n-html="privacy.storage.li3"><strong>Preferencias locales:</strong> parámetros de calibración de detección de pigmentos.</li>
+          </ul>
+          <p data-i18n="privacy.storage.outro">Ningún dato se sube a la nube, se sincroniza con servidores externos ni se comparte con terceros de forma automática.</p>
+        </section>
+
+        <section>
+          <h2 data-i18n="privacy.pdf.h2">Informes PDF</h2>
+          <p data-i18n="privacy.pdf.intro">Rupestra genera informes en formato PDF que incluyen:</p>
+          <ul>
+            <li data-i18n="privacy.pdf.li1">Nombre y ubicación del yacimiento (coordenadas, altitud, localidad).</li>
+            <li data-i18n="privacy.pdf.li2">Imágenes del análisis (original, resaltado, calco, decorrelación PCA).</li>
+            <li data-i18n="privacy.pdf.li3">Metadatos de la fotografía (apertura, ISO, focal, dispositivo).</li>
+            <li data-i18n="privacy.pdf.li4">Notas del usuario.</li>
+          </ul>
+          <p data-i18n-html="privacy.pdf.warning"><strong>Importante:</strong> si compartes un PDF exportado, el destinatario podrá ver toda la información contenida en el informe, incluyendo las coordenadas GPS del yacimiento. Comparte estos informes solo con personas de tu confianza.</p>
+        </section>
+
+        <section>
+          <h2 data-i18n="privacy.nocollect.h2">Datos que no recopilamos</h2>
+          <ul>
+            <li data-i18n="privacy.nocollect.li1">No recopilamos datos de uso ni analíticas.</li>
+            <li data-i18n="privacy.nocollect.li2">No utilizamos identificadores publicitarios (IDFA).</li>
+            <li data-i18n="privacy.nocollect.li3">No registramos direcciones IP.</li>
+            <li data-i18n="privacy.nocollect.li4">No utilizamos cookies ni tecnologías de seguimiento.</li>
+            <li data-i18n="privacy.nocollect.li5">No compartimos datos con terceros.</li>
+            <li data-i18n="privacy.nocollect.li6">No almacenamos datos en servidores propios ni de terceros.</li>
+            <li data-i18n="privacy.nocollect.li7">No requerimos registro de cuenta ni inicio de sesión.</li>
           </ul>
         </section>
 
         <section>
-          <h2>Eliminación de datos</h2>
-          <p>Puedes eliminar tus datos en cualquier momento:</p>
+          <h2 data-i18n="privacy.thirdparty.h2">Servicios de terceros</h2>
+          <p data-i18n="privacy.thirdparty.p1">Rupestra no integra ningún SDK, librería ni servicio de terceros. Utiliza exclusivamente frameworks nativos de Apple (SwiftUI, AVFoundation, CoreImage, CoreLocation, Speech, Photos, SwiftData).</p>
+          <p data-i18n="privacy.thirdparty.p2">Los únicos servicios externos invocados son APIs del sistema operativo iOS:</p>
           <ul>
-            <li><strong>Sesiones individuales:</strong> desliza para eliminar en la Biblioteca. Se borran la sesión, todas sus imágenes, miniaturas y notas de voz asociadas.</li>
-            <li><strong>Proyectos:</strong> eliminar un proyecto no elimina sus sesiones (quedan como sesiones sin proyecto asignado).</li>
-            <li><strong>Calibración:</strong> restablece los parámetros de detección desde la pantalla de calibración de cada pigmento.</li>
-            <li><strong>Eliminación completa:</strong> desinstalar la aplicación elimina todos los datos almacenados localmente.</li>
+            <li data-i18n-html="privacy.thirdparty.li1"><strong>Geocodificación inversa</strong> (CLGeocoder de Apple): convierte coordenadas GPS en nombres de localidad. Sujeta a la <a href="https://www.apple.com/legal/privacy/">Política de Privacidad de Apple</a>.</li>
+            <li data-i18n-html="privacy.thirdparty.li2"><strong>Reconocimiento de voz</strong> (SFSpeechRecognizer de Apple): transcribe audio a texto en el dispositivo.</li>
           </ul>
         </section>
 
         <section>
-          <h2>Seguridad</h2>
-          <p>Los datos almacenados en Rupestra están protegidos por los mecanismos de seguridad de iOS:</p>
+          <h2 data-i18n="privacy.deletion.h2">Eliminación de datos</h2>
+          <p data-i18n="privacy.deletion.intro">Puedes eliminar tus datos en cualquier momento:</p>
           <ul>
-            <li>Cifrado a nivel de sistema de archivos (iOS Data Protection).</li>
-            <li>Sandboxing de aplicaciones (los datos no son accesibles por otras apps).</li>
-            <li>La base de datos está cifrada por defecto en iOS.</li>
+            <li data-i18n-html="privacy.deletion.li1"><strong>Sesiones individuales:</strong> desliza para eliminar en la Biblioteca. Se borran la sesión, todas sus imágenes, miniaturas y notas de voz asociadas.</li>
+            <li data-i18n-html="privacy.deletion.li2"><strong>Proyectos:</strong> eliminar un proyecto no elimina sus sesiones (quedan como sesiones sin proyecto asignado).</li>
+            <li data-i18n-html="privacy.deletion.li3"><strong>Calibración:</strong> restablece los parámetros de detección desde la pantalla de calibración de cada pigmento.</li>
+            <li data-i18n-html="privacy.deletion.li4"><strong>Eliminación completa:</strong> desinstalar la aplicación elimina todos los datos almacenados localmente.</li>
           </ul>
         </section>
 
         <section>
-          <h2>Menores</h2>
-          <p>Rupestra no está dirigida a menores de 13 años. No recopilamos intencionalmente información de menores. Si descubres que un menor ha proporcionado datos personales a través de la aplicación, contacta con nosotros para proceder a su eliminación.</p>
+          <h2 data-i18n="privacy.security.h2">Seguridad</h2>
+          <p data-i18n="privacy.security.intro">Los datos almacenados en Rupestra están protegidos por los mecanismos de seguridad de iOS:</p>
+          <ul>
+            <li data-i18n="privacy.security.li1">Cifrado a nivel de sistema de archivos (iOS Data Protection).</li>
+            <li data-i18n="privacy.security.li2">Sandboxing de aplicaciones (los datos no son accesibles por otras apps).</li>
+            <li data-i18n="privacy.security.li3">La base de datos está cifrada por defecto en iOS.</li>
+          </ul>
         </section>
 
         <section>
-          <h2>Cambios en esta política</h2>
-          <p>Nos reservamos el derecho de actualizar esta política de privacidad. Cualquier cambio será publicado en esta misma página con la fecha de última actualización. Te recomendamos revisar esta política periódicamente.</p>
+          <h2 data-i18n="privacy.minors.h2">Menores</h2>
+          <p data-i18n="privacy.minors.p">Rupestra no está dirigida a menores de 13 años. No recopilamos intencionalmente información de menores. Si descubres que un menor ha proporcionado datos personales a través de la aplicación, contacta con nosotros para proceder a su eliminación.</p>
         </section>
 
         <section>
-          <h2>Contacto</h2>
-          <p>Si tienes preguntas sobre esta política de privacidad o sobre el tratamiento de tus datos, puedes contactarnos en:</p>
-          <p><strong>Correo electrónico:</strong> <a href="mailto:collworks.ai@gmail.com">collworks.ai@gmail.com</a><br />
+          <h2 data-i18n="privacy.changes.h2">Cambios en esta política</h2>
+          <p data-i18n="privacy.changes.p">Nos reservamos el derecho de actualizar esta política de privacidad. Cualquier cambio será publicado en esta misma página con la fecha de última actualización. Te recomendamos revisar esta política periódicamente.</p>
+        </section>
+
+        <section>
+          <h2 data-i18n="privacy.contact.h2">Contacto</h2>
+          <p data-i18n="privacy.contact.p">Si tienes preguntas sobre esta política de privacidad o sobre el tratamiento de tus datos, puedes contactarnos en:</p>
+          <p data-i18n-html="privacy.contact.detail"><strong>Correo electrónico:</strong> <a href="mailto:collworks.ai@gmail.com">collworks.ai@gmail.com</a><br />
           <strong>Desarrollador:</strong> Collworks</p>
         </section>
       </div>
@@ -184,9 +190,9 @@
 
   <footer class="site-footer">
     <div class="container footer-center">
-      <nav class="footer-nav" aria-label="Enlaces de pie de página">
-        <a class="footer-link" href="Politica_de_Privacidad.html" aria-current="page">Política de privacidad</a>
-        <a href="mailto:info@rupestra.com">Contacto</a>
+      <nav class="footer-nav" data-i18n-aria="aria.footer-nav" aria-label="Enlaces de pie de página">
+        <a class="footer-link" href="Politica_de_Privacidad.html" aria-current="page" data-i18n="footer.privacy">Política de privacidad</a>
+        <a href="mailto:info@rupestra.com" data-i18n="footer.contact">Contacto</a>
         <span class="footer-copy">&copy; 2026 Collworks</span>
       </nav>
     </div>
@@ -197,17 +203,19 @@
 
     navToggle?.addEventListener("click", () => {
       const isOpen = mainNav.classList.toggle("is-open");
+      const en = window.rupestra && rupestra.getLang() === "en";
       navToggle.classList.toggle("is-active", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen);
-      navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      navToggle.setAttribute("aria-label", isOpen ? (en ? "Close menu" : "Cerrar menú") : (en ? "Open menu" : "Abrir menú"));
     });
 
     mainNav?.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
+        const en = window.rupestra && rupestra.getLang() === "en";
         mainNav.classList.remove("is-open");
         navToggle?.classList.remove("is-active");
         navToggle?.setAttribute("aria-expanded", "false");
-        navToggle?.setAttribute("aria-label", "Abrir menú");
+        navToggle?.setAttribute("aria-label", en ? "Open menu" : "Abrir menú");
       });
     });
   </script>

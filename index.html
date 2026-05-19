@@ -14,26 +14,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700;800&display=swap" />
+  <script>try{if(localStorage.getItem("rupestra-lang")==="en")document.documentElement.classList.add("lang-loading")}catch(e){}</script>
   <link rel="stylesheet" href="styles.css" />
+  <script src="i18n.js"></script>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+  <a href="#main-content" class="skip-link" data-i18n="skip-link">Saltar al contenido</a>
   <header class="site-header">
-    <a class="brand-group" href="index.html" aria-label="Inicio de Rupestra">
-      <img src="logos/rupestra_logo_app.png" alt="Logo de Rupestra" class="brand-logo" />
+    <a class="brand-group" href="index.html" data-i18n-aria="aria.brand-home" aria-label="Inicio de Rupestra">
+      <img src="logos/rupestra_logo_app.png" data-i18n-alt="alt.logo" alt="Logo de Rupestra" class="brand-logo" />
       <div>
         <div class="brand-title">Rupestra</div>
-        <p class="brand-subtitle">documentación visual rupestre</p>
+        <p class="brand-subtitle" data-i18n="brand-subtitle">documentación visual rupestre</p>
       </div>
     </a>
-    <nav class="hero-nav" id="main-nav" aria-label="Navegación principal">
-      <a href="#que-es">Qué es</a>
-      <a href="#para">Para quién</a>
-      <a href="#como-funciona">Cómo funciona</a>
-      <a href="#en-vivo">En vivo</a>
-      <a href="#porque">Por qué</a>
-      <a href="#agradecimientos">Agradecimientos</a>
+    <nav class="hero-nav" id="main-nav" data-i18n-aria="aria.nav" aria-label="Navegación principal">
+      <a href="#que-es" data-i18n="nav.que-es">Qué es</a>
+      <a href="#para" data-i18n="nav.para">Para quién</a>
+      <a href="#como-funciona" data-i18n="nav.como-funciona">Cómo funciona</a>
+      <a href="#en-vivo" data-i18n="nav.en-vivo">En vivo</a>
+      <a href="#porque" data-i18n="nav.porque">Por qué</a>
+      <a href="#agradecimientos" data-i18n="nav.agradecimientos">Agradecimientos</a>
     </nav>
+    <div class="lang-switch" role="group" aria-label="Selección de idioma" data-i18n-aria="aria.lang-switch">
+      <button class="lang-switch-btn is-active" type="button" data-lang="es" aria-pressed="true" onclick="rupestra.setLang('es')">ES</button>
+      <button class="lang-switch-btn" type="button" data-lang="en" aria-pressed="false" onclick="rupestra.setLang('en')">EN</button>
+    </div>
     <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
       <span class="nav-toggle-bar"></span>
       <span class="nav-toggle-bar"></span>
@@ -46,12 +52,12 @@
       <div class="container hero-inner">
         <div class="hero-grid">
           <div class="hero-copy">
-            <span class="availability-chip">Próximamente en App Store</span>
-            <h1>Revelar lo invisible. Documentar con rigor.</h1>
-            <p>Rupestra transforma la fotografía de campo en una herramienta de análisis y documentación, ayudando a detectar y resaltar posibles pigmentos rupestres mediante análisis cromático avanzado y procesamiento digital de imagen.</p>
-            <p>Nacida desde un equipo multidisciplinar vinculado a la conservación de cavidades, combina experiencia en espeleología, arqueología, geología e ingeniería de software para apoyar la observación, el registro y la generación de informes en cuevas, abrigos y entornos rupestres.</p>
+            <span class="availability-chip" data-i18n="hero.chip">Próximamente en App Store</span>
+            <h1 data-i18n="hero.h1">Revelar lo invisible. Documentar con rigor.</h1>
+            <p data-i18n="hero.p1">Rupestra transforma la fotografía de campo en una herramienta de análisis y documentación, ayudando a detectar y resaltar posibles pigmentos rupestres mediante análisis cromático avanzado y procesamiento digital de imagen.</p>
+            <p data-i18n="hero.p2">Nacida desde un equipo multidisciplinar vinculado a la conservación de cavidades, combina experiencia en espeleología, arqueología, geología e ingeniería de software para apoyar la observación, el registro y la generación de informes en cuevas, abrigos y entornos rupestres.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="mailto:info@rupestra.com">Contactar sobre el proyecto</a>
+              <a class="button button-primary" href="mailto:info@rupestra.com" data-i18n="hero.cta">Contactar sobre el proyecto</a>
             </div>
           </div>
 
@@ -63,6 +69,7 @@
                 <img
                   src="pantallazos_app/modo_automatico_de_pigmentos.PNG"
                   alt="Interfaz de Rupestra mostrando el modo automático de detección de pigmentos"
+                  data-i18n-alt="alt.screenshot-auto"
                   class="app-screenshot"
                   width="1206"
                   height="2622"
@@ -86,6 +93,7 @@
                 <img
                   src="pantallazos_app/pantallazo_app_procesado.PNG"
                   alt="Interfaz de Rupestra mostrando el resultado del procesado y análisis de imagen"
+                  data-i18n-alt="alt.screenshot-processed"
                   class="app-screenshot"
                   width="1206"
                   height="2622"
@@ -96,53 +104,53 @@
           </div>
         </div>
         <div class="section-copy">
-           <p class="section-label">¿Qué es Rupestra?</p>
-          <h2>Una herramienta de campo para observar, analizar y registrar pigmentos.</h2>
-          <p>Rupestra es una aplicación de apoyo a la documentación de arte rupestre que combina análisis cromático avanzado, procesamiento digital de imagen y herramientas de registro diseñadas para el trabajo de campo.</p>
-          <p>La app permite fotografiar una superficie, seleccionar un tipo de pigmento, analizar la imagen y generar un informe técnico con imágenes de análisis, coordenadas GPS, metadatos de cámara y notas de campo.</p>
-          <p>Su sistema combina dos líneas de análisis visual: detección por espacio de color HSV, orientada a identificar y aislar pigmentos específicos, y decorrelación estadística de color mediante PCA, pensada para realzar trazos degradados, débiles o difíciles de apreciar a simple vista.</p>
+           <p class="section-label" data-i18n="quees.label">¿Qué es Rupestra?</p>
+          <h2 data-i18n="quees.h2">Una herramienta de campo para observar, analizar y registrar pigmentos.</h2>
+          <p data-i18n="quees.p1">Rupestra es una aplicación de apoyo a la documentación de arte rupestre que combina análisis cromático avanzado, procesamiento digital de imagen y herramientas de registro diseñadas para el trabajo de campo.</p>
+          <p data-i18n="quees.p2">La app permite fotografiar una superficie, seleccionar un tipo de pigmento, analizar la imagen y generar un informe técnico con imágenes de análisis, coordenadas GPS, metadatos de cámara y notas de campo.</p>
+          <p data-i18n="quees.p3">Su sistema combina dos líneas de análisis visual: detección por espacio de color HSV, orientada a identificar y aislar pigmentos específicos, y decorrelación estadística de color mediante PCA, pensada para realzar trazos degradados, débiles o difíciles de apreciar a simple vista.</p>
           <ul class="feature-list">
-            <li><strong>Detección HSV</strong> identifica y segmenta posibles pigmentos por tono, saturación y brillo, con umbrales calibrados para rojo ocre, ocre amarillo, rojo violáceo, negro y blanco.</li>
-            <li><strong>Realce cromático por PCA</strong> ofrece 6 modos de decorrelación de color para ayudar a revelar pigmentos degradados, contrastes débiles o trazos casi imperceptibles.</li>
-            <li><strong>Escaneo en vivo</strong> permite visualizar el filtro de pigmento en tiempo real sobre la cámara antes de capturar la imagen.</li>
-            <li><strong>Informe técnico en PDF</strong> reúne imágenes de análisis, coordenadas GPS, metadatos EXIF de la fotografía y notas de campo, incluyendo notas de voz transcritas.</li>
-            <li><strong>Procesamiento local y privacidad</strong> mantiene todo el análisis en el dispositivo, sin inteligencia artificial generativa y sin enviar imágenes ni datos a servidores externos.</li>
+            <li data-i18n-html="quees.feat.hsv"><strong>Detección HSV</strong> identifica y segmenta posibles pigmentos por tono, saturación y brillo, con umbrales calibrados para rojo ocre, ocre amarillo, rojo violáceo, negro y blanco.</li>
+            <li data-i18n-html="quees.feat.pca"><strong>Realce cromático por PCA</strong> ofrece 6 modos de decorrelación de color para ayudar a revelar pigmentos degradados, contrastes débiles o trazos casi imperceptibles.</li>
+            <li data-i18n-html="quees.feat.live"><strong>Escaneo en vivo</strong> permite visualizar el filtro de pigmento en tiempo real sobre la cámara antes de capturar la imagen.</li>
+            <li data-i18n-html="quees.feat.pdf"><strong>Informe técnico en PDF</strong> reúne imágenes de análisis, coordenadas GPS, metadatos EXIF de la fotografía y notas de campo, incluyendo notas de voz transcritas.</li>
+            <li data-i18n-html="quees.feat.privacy"><strong>Procesamiento local y privacidad</strong> mantiene todo el análisis en el dispositivo, sin inteligencia artificial generativa y sin enviar imágenes ni datos a servidores externos.</li>
           </ul>
         </div>
       </div>
     </section>
     <section id="para" class="section section-alt">
       <div class="container">
-        <p class="section-label">Para quién está pensada</p>
-        <h2>Diseñada para quienes documentan sobre roca.</h2>
+        <p class="section-label" data-i18n="para.label">Para quién está pensada</p>
+        <h2 data-i18n="para.h2">Diseñada para quienes documentan sobre roca.</h2>
         <div class="card-grid">
           <article class="feature-card">
             <div class="icon-box" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M3 20l7-12 4 7 2-3 5 8z" /></svg>
             </div>
-            <h3>Espeleólogos</h3>
-            <p>Para registrar cavidades, paneles, posibles marcas y restos de pigmento durante exploraciones, revisiones de campo o trabajos de documentación.</p>
+            <h3 data-i18n="para.speleo.h3">Espeleólogos</h3>
+            <p data-i18n="para.speleo.p">Para registrar cavidades, paneles, posibles marcas y restos de pigmento durante exploraciones, revisiones de campo o trabajos de documentación.</p>
           </article>
           <article class="feature-card">
             <div class="icon-box" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M10 4v5l-3 5" /><path d="M12 4h4" /><path d="M8 14h8" /><path d="M5 20h14" /><path d="M14 9l4 6" /></svg>
             </div>
-            <h3>Arqueólogos</h3>
-            <p>Como herramienta de apoyo visual para observar, contrastar y preparar documentación gráfica de superficies rupestres.</p>
+            <h3 data-i18n="para.arqueo.h3">Arqueólogos</h3>
+            <p data-i18n="para.arqueo.p">Como herramienta de apoyo visual para observar, contrastar y preparar documentación gráfica de superficies rupestres.</p>
           </article>
           <article class="feature-card">
             <div class="icon-box" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M6 3h9l3 3v15H6z" /><path d="M15 3v4h4" /><path d="M9 12h6" /><path d="M9 16h6" /></svg>
             </div>
-            <h3>Equipos de documentación</h3>
-            <p>Para generar informes visuales con imágenes de análisis, notas de campo, metadatos técnicos y localización del contexto.</p>
+            <h3 data-i18n="para.equipo.h3">Equipos de documentación</h3>
+            <p data-i18n="para.equipo.p">Para generar informes visuales con imágenes de análisis, notas de campo, metadatos técnicos y localización del contexto.</p>
           </article>
           <article class="feature-card">
             <div class="icon-box" aria-hidden="true">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M15 9l-2 5-5 2 2-5z" /></svg>
             </div>
-            <h3>Conservación y patrimonio</h3>
-            <p>Para apoyar tareas de observación, seguimiento y registro, siempre desde el respeto al patrimonio y sin sustituir el criterio experto.</p>
+            <h3 data-i18n="para.conserv.h3">Conservación y patrimonio</h3>
+            <p data-i18n="para.conserv.p">Para apoyar tareas de observación, seguimiento y registro, siempre desde el respeto al patrimonio y sin sustituir el criterio experto.</p>
           </article>
         </div>
       </div>
@@ -151,18 +159,18 @@
     <section id="como-funciona" class="section section-light">
       <div class="container section-grid">
         <div>
-          <p class="section-label">Cómo funciona</p>
-          <h2>Del indicio en la roca al informe técnico.</h2>
-          <p class="section-text">Rupestra organiza el análisis en pasos claros para acompañar el trabajo real en cavidades: desde una primera observación visual hasta la generación de documentación técnica útil para el análisis posterior.</p>
+          <p class="section-label" data-i18n="como.label">Cómo funciona</p>
+          <h2 data-i18n="como.h2">Del indicio en la roca al informe técnico.</h2>
+          <p class="section-text" data-i18n="como.p">Rupestra organiza el análisis en pasos claros para acompañar el trabajo real en cavidades: desde una primera observación visual hasta la generación de documentación técnica útil para el análisis posterior.</p>
         </div>
         <div class="mode-grid">
           <article class="mode-card">
             <span class="mode-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></svg>  
+              <svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></svg>
             </span>
             <div>
-              <h3>Captura o importa la imagen</h3>
-              <p>Fotografía la superficie en campo o selecciona una imagen existente para iniciar el análisis.</p>
+              <h3 data-i18n="como.step1.h3">Captura o importa la imagen</h3>
+              <p data-i18n="como.step1.p">Fotografía la superficie en campo o selecciona una imagen existente para iniciar el análisis.</p>
             </div>
           </article>
           <article class="mode-card">
@@ -170,8 +178,8 @@
               <svg viewBox="0 0 24 24"><path d="M12 3l1.5 5L19 10l-5.5 2L12 17l-1.5-5L5 10l5.5-2z" /><path d="M19 17l.7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7z" /></svg>
             </span>
             <div>
-              <h3>Selecciona el pigmento</h3>
-              <p>Elige entre pigmentos predefinidos o toma una muestra manual directamente sobre la imagen mediante el cuentagotas.</p>
+              <h3 data-i18n="como.step2.h3">Selecciona el pigmento</h3>
+              <p data-i18n="como.step2.p">Elige entre pigmentos predefinidos o toma una muestra manual directamente sobre la imagen mediante el cuentagotas.</p>
             </div>
           </article>
           <article class="mode-card">
@@ -179,8 +187,8 @@
               <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" /><path d="M9 12l2 2 4-5" /></svg>
             </span>
             <div>
-              <h3>Ajusta y realza</h3>
-              <p>Corrige dominantes de color, calibra la detección o aplica realce cromático avanzado para observar trazos débiles o poco perceptibles.</p>
+              <h3 data-i18n="como.step3.h3">Ajusta y realza</h3>
+              <p data-i18n="como.step3.p">Corrige dominantes de color, calibra la detección o aplica realce cromático avanzado para observar trazos débiles o poco perceptibles.</p>
             </div>
           </article>
           <article class="mode-card">
@@ -188,8 +196,8 @@
               <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z" /><path d="M3 12l9 5 9-5" /><path d="M3 16l9 5 9-5" /></svg>
             </span>
             <div>
-              <h3>Documenta el resultado</h3>
-              <p>Guarda imágenes comparables —original, resaltado, calco y realce cromático— junto con coordenadas GPS, metadatos de cámara y notas de campo en un informe técnico en PDF.</p>
+              <h3 data-i18n="como.step4.h3">Documenta el resultado</h3>
+              <p data-i18n="como.step4.p">Guarda imágenes comparables —original, resaltado, calco y realce cromático— junto con coordenadas GPS, metadatos de cámara y notas de campo en un informe técnico en PDF.</p>
             </div>
           </article>
         </div>
@@ -199,11 +207,11 @@
     <section id="en-vivo" class="section section-alt">
       <div class="container split-grid">
         <div>
-          <p class="section-label">Modo diferencial</p>
-          <h2>Escaneo en vivo: una ventana aumentada sobre la roca.</h2>
-          <p>El modo En Vivo transforma el móvil en una herramienta de observación en tiempo real. Al mover la cámara sobre paredes, techos o superficies rupestres, Rupestra resalta las zonas compatibles con el pigmento seleccionado y neutraliza el resto de la imagen en una escala gris.</p>
-          <p>Así es posible recorrer visualmente una cavidad o abrigo antes de tomar la fotografía definitiva, detectando indicios, contrastes o zonas de interés que podrían pasar desapercibidas a simple vista.</p>
-          <p>Una forma rápida de decidir dónde observar con más detalle, qué fotografiar y qué documentar posteriormente.</p>
+          <p class="section-label" data-i18n="envivo.label">Modo diferencial</p>
+          <h2 data-i18n="envivo.h2">Escaneo en vivo: una ventana aumentada sobre la roca.</h2>
+          <p data-i18n="envivo.p1">El modo En Vivo transforma el móvil en una herramienta de observación en tiempo real. Al mover la cámara sobre paredes, techos o superficies rupestres, Rupestra resalta las zonas compatibles con el pigmento seleccionado y neutraliza el resto de la imagen en una escala gris.</p>
+          <p data-i18n="envivo.p2">Así es posible recorrer visualmente una cavidad o abrigo antes de tomar la fotografía definitiva, detectando indicios, contrastes o zonas de interés que podrían pasar desapercibidas a simple vista.</p>
+          <p data-i18n="envivo.p3">Una forma rápida de decidir dónde observar con más detalle, qué fotografiar y qué documentar posteriormente.</p>
         </div>
         <div class="feature-box feature-box-dark">
           <div class="feature-heading">
@@ -211,8 +219,8 @@
               <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2" /><path d="M7.8 16.2a6 6 0 0 1 0-8.4" /><path d="M16.2 7.8a6 6 0 0 1 0 8.4" /><path d="M4.9 19.1a10 10 0 0 1 0-14.2" /><path d="M19.1 4.9a10 10 0 0 1 0 14.2" /></svg>
             </span>
             <div>
-              <h3>Realce directo sobre cámara</h3>
-              <p>Observación aumentada antes de la captura definitiva.</p>
+              <h3 data-i18n="envivo.feat.h3">Realce directo sobre cámara</h3>
+              <p data-i18n="envivo.feat.p">Observación aumentada antes de la captura definitiva.</p>
             </div>
           </div>
           <div class="live-video-frame">
@@ -233,105 +241,113 @@
       <div class="container">
         <div class="field-intro">
           <div class="field-intro-copy">
-            <p class="section-label">Por qué Rupestra</p>
-            <h2>Rupestra nace del trabajo real de campo.</h2>
-            <p>El proyecto surge de la experiencia directa en exploración, observación y documentación de superficies rocosas, dentro de un contexto de conservación de cavidades y trabajo de campo.</p>
-            <p>Las condiciones reales marcan el diseño de la app: poca luz, accesos complejos, superficies irregulares, necesidad de registrar contexto, revisar indicios con cuidado y generar documentación útil para su análisis posterior.</p>
-            <p>Rupestra está pensada para acompañar ese proceso: observar mejor, registrar con más precisión y facilitar la creación de informes claros, trazables y útiles para equipos de documentación.</p>
+            <p class="section-label" data-i18n="porque.label">Por qué Rupestra</p>
+            <h2 data-i18n="porque.h2">Rupestra nace del trabajo real de campo.</h2>
+            <p data-i18n="porque.p1">El proyecto surge de la experiencia directa en exploración, observación y documentación de superficies rocosas, dentro de un contexto de conservación de cavidades y trabajo de campo.</p>
+            <p data-i18n="porque.p2">Las condiciones reales marcan el diseño de la app: poca luz, accesos complejos, superficies irregulares, necesidad de registrar contexto, revisar indicios con cuidado y generar documentación útil para su análisis posterior.</p>
+            <p data-i18n="porque.p3">Rupestra está pensada para acompañar ese proceso: observar mejor, registrar con más precisión y facilitar la creación de informes claros, trazables y útiles para equipos de documentación.</p>
             <div class="field-note">
-              <strong>Una herramienta en constante evolución.</strong>
-              <span>Rupestra seguirá evolucionando a partir de las necesidades reales detectadas en campo: nuevos modos de análisis, ajustes de calibración, informes más completos y flujos de trabajo adaptados a equipos multidisciplinares.</span>
+              <strong data-i18n="porque.note.strong">Una herramienta en constante evolución.</strong>
+              <span data-i18n="porque.note.span">Rupestra seguirá evolucionando a partir de las necesidades reales detectadas en campo: nuevos modos de análisis, ajustes de calibración, informes más completos y flujos de trabajo adaptados a equipos multidisciplinares.</span>
             </div>
           </div>
           <div class="feature-box feature-box-dark">
             <div class="partner-logos">
-              <img src="logos/Logo_Conservacion_512.png" alt="Logo de Conservación de Cavidades de la Comunidad de Madrid" class="conservation-logo" />
-              <img src="logos/FME.png" alt="Logo de la Federación Madrileña de Espeleología" class="fme-logo" />
+              <img src="logos/Logo_Conservacion_512.png" alt="Logo de Conservación de Cavidades de la Comunidad de Madrid" data-i18n-alt="alt.logo-conservacion" class="conservation-logo" />
+              <img src="logos/FME.png" alt="Logo de la Federación Madrileña de Espeleología" data-i18n-alt="alt.logo-fme" class="fme-logo" />
             </div>
            
           </div>
         </div>
 
         <div class="field-gallery-heading">
-          <p class="section-label">Galería</p>
-          <h3>Trabajo de campo, documentación y análisis en cavidades.</h3>
+          <p class="section-label" data-i18n="galeria.label">Galería</p>
+          <h3 data-i18n="galeria.h3">Trabajo de campo, documentación y análisis en cavidades.</h3>
         </div>
 
-        <div class="field-carousel" aria-label="Carrusel de trabajos de campo">
-          <button class="carousel-control carousel-control-prev" type="button" aria-label="Ver imagen anterior" data-carousel-prev>
+        <div class="field-carousel" data-i18n-aria="aria.carousel" aria-label="Carrusel de trabajos de campo">
+          <button class="carousel-control carousel-control-prev" type="button" data-i18n-aria="aria.carousel.prev" aria-label="Ver imagen anterior" data-carousel-prev>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6" /></svg>
           </button>
 
           <div class="carousel-track" data-carousel-track>
             <figure class="field-card" id="campo-01">
-              <img src="imagenes_carrousel/carrousel_05.jpg" alt="Exploración y observación de superficies rupestres en cavidad" class="field-photo" width="800" height="534" loading="eager" />
+              <img src="imagenes_carrousel/carrousel_05.jpg" alt="Exploración y observación de superficies rupestres en cavidad" data-i18n-alt="alt.campo01" class="field-photo" width="800" height="534" loading="eager" />
             </figure>
 
             <figure class="field-card" id="campo-02">
-              <img src="imagenes_carrousel/carrousel_08.JPG" alt="Equipo de documentación trabajando en el interior de una cueva" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_08.JPG" alt="Equipo de documentación trabajando en el interior de una cueva" data-i18n-alt="alt.campo02" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-03">
-              <img src="imagenes_carrousel/Prokabaja_ubicacion_B_C.JPG" alt="Localización de paneles con posibles restos de pigmentos en abrigo rocoso" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/Prokabaja_ubicacion_B_C.JPG" alt="Localización de paneles con posibles restos de pigmentos en abrigo rocoso" data-i18n-alt="alt.campo03" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-04">
-              <img src="imagenes_carrousel/carrousel_09.JPG" alt="Registro fotográfico de superficie rocosa con indicios de pigmentación" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_09.JPG" alt="Registro fotográfico de superficie rocosa con indicios de pigmentación" data-i18n-alt="alt.campo04" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-05">
-              <img src="imagenes_carrousel/carrousel_07.JPG" alt="Trabajo de campo con iluminación en cavidad subterránea" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_07.JPG" alt="Trabajo de campo con iluminación en cavidad subterránea" data-i18n-alt="alt.campo05" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-06">
-              <img src="imagenes_carrousel/carrousel_02.JPG" alt="Detalle de pared rocosa durante sesión de documentación" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_02.JPG" alt="Detalle de pared rocosa durante sesión de documentación" data-i18n-alt="alt.campo06" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-07">
-              <img src="imagenes_carrousel/carrousel_04.JPG" alt="Espeleólogos accediendo a zona de interés en cavidad" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_04.JPG" alt="Espeleólogos accediendo a zona de interés en cavidad" data-i18n-alt="alt.campo07" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-08">
-              <img src="imagenes_carrousel/carrousel_06.JPG" alt="Observación de techo y paredes en cueva con posibles marcas" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_06.JPG" alt="Observación de techo y paredes en cueva con posibles marcas" data-i18n-alt="alt.campo08" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-09">
-              <img src="imagenes_carrousel/carrousel_03.JPG" alt="Vista general de la entrada a abrigo rocoso en campo" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_03.JPG" alt="Vista general de la entrada a abrigo rocoso en campo" data-i18n-alt="alt.campo09" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-10">
-              <img src="imagenes_carrousel/carrousel_010.jpg" alt="Equipo de conservación revisando superficie con posibles restos pigmentarios" class="field-photo" width="800" height="534" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_010.jpg" alt="Equipo de conservación revisando superficie con posibles restos pigmentarios" data-i18n-alt="alt.campo10" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
           </div>
 
-          <button class="carousel-control carousel-control-next" type="button" aria-label="Ver imagen siguiente" data-carousel-next>
+          <button class="carousel-control carousel-control-next" type="button" data-i18n-aria="aria.carousel.next" aria-label="Ver imagen siguiente" data-carousel-next>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
           </button>
         </div>
 
-        <div class="carousel-dots" aria-label="Seleccionar imagen del carrusel">
-          <button type="button" aria-label="Ver imagen 1" data-carousel-dot="0"></button>
-          <button type="button" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
-          <button type="button" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
-          <button type="button" aria-label="Ver imagen 4" data-carousel-dot="3"></button>
-          <button type="button" aria-label="Ver imagen 5" data-carousel-dot="4"></button>
-          <button type="button" aria-label="Ver imagen 6" data-carousel-dot="5"></button>
-          <button type="button" aria-label="Ver imagen 7" data-carousel-dot="6"></button>
-          <button type="button" aria-label="Ver imagen 8" data-carousel-dot="7"></button>
-          <button type="button" aria-label="Ver imagen 9" data-carousel-dot="8"></button>
-          <button type="button" aria-label="Ver imagen 10" data-carousel-dot="9"></button>
+        <div class="carousel-dots" data-i18n-aria="aria.carousel.dots" aria-label="Seleccionar imagen del carrusel">
+          <button type="button" data-i18n-aria="aria.carousel.dot1" aria-label="Ver imagen 1" data-carousel-dot="0"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot2" aria-label="Ver imagen 2" data-carousel-dot="1"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot3" aria-label="Ver imagen 3" data-carousel-dot="2"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot4" aria-label="Ver imagen 4" data-carousel-dot="3"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot5" aria-label="Ver imagen 5" data-carousel-dot="4"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot6" aria-label="Ver imagen 6" data-carousel-dot="5"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot7" aria-label="Ver imagen 7" data-carousel-dot="6"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot8" aria-label="Ver imagen 8" data-carousel-dot="7"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot9" aria-label="Ver imagen 9" data-carousel-dot="8"></button>
+          <button type="button" data-i18n-aria="aria.carousel.dot10" aria-label="Ver imagen 10" data-carousel-dot="9"></button>
         </div>
       </div>
     </section>
     <section id="agradecimientos" class="section section-alt">
       <div class="container">
-        <p class="section-label">Agradecimientos</p>
+        <p class="section-label" data-i18n="agradecimientos.label">Agradecimientos</p>
         <div class="acknowledgement-layout">
-          <img src="imagenes/pedro_coll.jpg" alt="Retrato de Pedro Coll" class="acknowledgement-photo" loading="lazy" />
+          <figure class="acknowledgement-figure">
+            <img src="imagenes/pedro_coll.jpg" alt="Retrato de Pedro Coll" data-i18n-alt="alt.pedro" class="acknowledgement-photo" loading="lazy" />
+            <figcaption class="acknowledgement-caption">
+              <strong>Pedro Coll</strong>
+              <span data-i18n="agradecimientos.role1">Desarrollador de Rupestra</span>
+              <span data-i18n="agradecimientos.role2">Comisión de Conservación de Cavidades de la Comunidad de Madrid</span>
+              <span data-i18n="agradecimientos.role3">Federación Madrileña de Espeleología</span>
+            </figcaption>
+          </figure>
           <div class="acknowledgement-copy">
-            <p>Rupestra ha ido tomando forma gracias a muchas conversaciones, pruebas en campo, comentarios y necesidades compartidas.</p>
-            <p>Gracias a los miembros de la Comisión de Conservación de Cavidades de la Comunidad de Madrid por su paciencia, sus ideas, su tiempo y su disposición a probar, cuestionar y mejorar cada parte del proyecto.</p>
-            <p>Este trabajo se apoya en una mirada colectiva: la experiencia de campo, el criterio técnico y el compromiso con la documentación y conservación del patrimonio subterráneo.</p>
+            <p data-i18n="agradecimientos.p1">Rupestra ha ido tomando forma gracias a muchas conversaciones, pruebas en campo, comentarios y necesidades compartidas.</p>
+            <p data-i18n="agradecimientos.p2">Gracias a los miembros de la Comisión de Conservación de Cavidades de la Comunidad de Madrid por su paciencia, sus ideas, su tiempo y su disposición a probar, cuestionar y mejorar cada parte del proyecto.</p>
+            <p data-i18n="agradecimientos.p3">Este trabajo se apoya en una mirada colectiva: la experiencia de campo, el criterio técnico y el compromiso con la documentación y conservación del patrimonio subterráneo.</p>
           </div>
         </div>
       </div>
@@ -339,21 +355,21 @@
     <section class="section-dark closing-section">
       <div class="container footer-center">
         <img src="logos/rupestra_logo_app.png" alt="" class="footer-logo" />
-        <p class="section-label">Rupestra</p>
-        <h2>Tecnología de campo para documentar lo invisible.</h2>
-        <p class="section-text">Una app en evolución, nacida desde la experiencia real en cavidades y desarrollada con una mirada multidisciplinar para observar mejor, registrar con más orden y documentar con rigor posibles restos pigmentarios sobre roca.</p>
-        <a class="availability-chip" href="mailto:info@rupestra.com">Contactar sobre el proyecto</a>
+        <p class="section-label" data-i18n="closing.label">Rupestra</p>
+        <h2 data-i18n="closing.h2">Tecnología de campo para documentar lo invisible.</h2>
+        <p class="section-text" data-i18n="closing.p">Una app en evolución, nacida desde la experiencia real en cavidades y desarrollada con una mirada multidisciplinar para observar mejor, registrar con más orden y documentar con rigor posibles restos pigmentarios sobre roca.</p>
+        <a class="availability-chip" href="mailto:info@rupestra.com" data-i18n="closing.cta">Contactar sobre el proyecto</a>
       </div>
     </section>
   </main>
-  <button class="back-to-top" type="button" aria-label="Volver arriba" id="back-to-top">
+  <button class="back-to-top" type="button" data-i18n-aria="aria.back-to-top" aria-label="Volver arriba" id="back-to-top">
     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6" /></svg>
   </button>
   <footer class="site-footer">
     <div class="container footer-center">
-      <nav class="footer-nav" aria-label="Enlaces de pie de página">
-        <a class="footer-link" href="Politica_de_Privacidad.html">Política de privacidad</a>
-        <a href="mailto:info@rupestra.com">Contacto</a>
+      <nav class="footer-nav" data-i18n-aria="aria.footer-nav" aria-label="Enlaces de pie de página">
+        <a class="footer-link" href="Politica_de_Privacidad.html" data-i18n="footer.privacy">Política de privacidad</a>
+        <a href="mailto:info@rupestra.com" data-i18n="footer.contact">Contacto</a>
         <span class="footer-copy">&copy; 2026 Collworks</span>
       </nav>
     </div>
@@ -518,17 +534,19 @@
 
     navToggle?.addEventListener("click", () => {
       const isOpen = mainNav.classList.toggle("is-open");
+      const en = window.rupestra && rupestra.getLang() === "en";
       navToggle.classList.toggle("is-active", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen);
-      navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+      navToggle.setAttribute("aria-label", isOpen ? (en ? "Close menu" : "Cerrar menú") : (en ? "Open menu" : "Abrir menú"));
     });
 
     mainNav?.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
+        const en = window.rupestra && rupestra.getLang() === "en";
         mainNav.classList.remove("is-open");
         navToggle?.classList.remove("is-active");
         navToggle?.setAttribute("aria-expanded", "false");
-        navToggle?.setAttribute("aria-label", "Abrir menú");
+        navToggle?.setAttribute("aria-label", en ? "Open menu" : "Abrir menú");
       });
     });
 

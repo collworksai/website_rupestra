@@ -442,7 +442,7 @@ button:focus-visible,
 
 .section h2,
 .closing-section h2 {
-  margin: 1rem 0 0;
+  margin: 1rem 0 1.5rem;
   font-size: clamp(2rem, 2.5vw, 3.5rem);
   line-height: 1.05;
   font-family: "Cormorant Garamond", "Georgia", serif;
@@ -902,6 +902,27 @@ button:focus-visible,
   box-shadow: 0 18px 45px rgba(44, 26, 14, 0.14);
 }
 
+.acknowledgement-figure {
+  margin: 0;
+}
+
+.acknowledgement-caption {
+  display: grid;
+  gap: 0.2rem;
+  margin-top: 0.75rem;
+}
+
+.acknowledgement-caption strong {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.acknowledgement-caption span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
 .acknowledgement-copy {
   max-width: 58rem;
 }
@@ -1243,6 +1264,53 @@ button:focus-visible,
 
   .field-photo {
     height: 19rem;
+  }
+}
+
+/* ── i18n: FOUC prevention ── */
+html.lang-loading body {
+  visibility: hidden;
+}
+
+/* ── Language switcher ── */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  flex-shrink: 0;
+  padding: 0.2rem;
+  border: 1px solid rgba(200, 168, 130, 0.3);
+  border-radius: 0.35rem;
+  background: rgba(200, 168, 130, 0.08);
+}
+
+.lang-switch-btn {
+  padding: 0.3rem 0.55rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  color: rgba(216, 200, 184, 0.7);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease;
+  font-family: inherit;
+}
+
+.lang-switch-btn:hover {
+  color: #fff;
+}
+
+.lang-switch-btn.is-active {
+  background: rgba(200, 168, 130, 0.25);
+  color: #fff;
+}
+
+@media (max-width: 879px) {
+  .lang-switch {
+    margin-left: auto;
+    margin-right: 0.5rem;
   }
 }
 
