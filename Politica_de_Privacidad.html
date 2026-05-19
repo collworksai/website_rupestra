@@ -9,43 +9,49 @@
   <meta property="og:title" content="Política de Privacidad · Rupestra" />
   <meta property="og:description" content="Rupestra funciona localmente en el dispositivo y no envía datos a servidores externos." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logos/logo_rupestra_cruz.png" />
-  <link rel="icon" type="image/png" href="logos/logo_rupestra_cruz.png" />
+  <meta property="og:image" content="logos/rupestra_logo_app.png" />
+  <link rel="icon" type="image/png" href="logos/rupestra_logo_app.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700;800&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
   <header class="site-header">
     <a class="brand-group" href="index.html" aria-label="Volver a la página principal de Rupestra">
-      <img src="logos/logo_rupestra_cruz.png" alt="Logo de Rupestra" class="brand-logo" />
+      <img src="logos/rupestra_logo_app.png" alt="Logo de Rupestra" class="brand-logo" />
       <div>
         <div class="brand-title">Rupestra</div>
         <p class="brand-subtitle">documentación visual rupestre</p>
       </div>
     </a>
-    <nav class="hero-nav" aria-label="Navegación principal">
+    <nav class="hero-nav" id="main-nav" aria-label="Navegación principal">
       <a href="index.html">Inicio</a>
       <a href="index.html#que-es">Qué es</a>
       <a href="index.html#como-funciona">Cómo funciona</a>
       <a href="index.html#agradecimientos">Agradecimientos</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </header>
 
-  <main class="page legal-page">
-    <section class="section section-dark legal-hero">
-      <div class="container">
-        <p class="section-label">Rupestra</p>
-        <h1>Política de Privacidad</h1>
-        <p class="legal-updated">Última actualización: 17 de mayo de 2026</p>
-        <p class="legal-intro">Rupestra es una aplicación de análisis de arte rupestre desarrollada por Collworks. Esta política explica qué datos recopila la aplicación, cómo los utiliza y los derechos que tienes como usuario.</p>
-        <div class="field-note legal-principle">
-          <strong>Principio fundamental</strong>
-          <span>Rupestra funciona completamente en tu dispositivo. No enviamos, almacenamos ni procesamos tus datos en ningún servidor externo. No existe registro de cuenta ni inicio de sesión.</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-light">
+  <main id="main-content" class="page">
+    <section class="section section-light legal-page-content">
       <div class="container legal-content">
+        <header class="legal-header">
+          <p class="section-label">Rupestra</p>
+          <h1>Política de Privacidad</h1>
+          <p class="legal-updated">Última actualización: 17 de mayo de 2026</p>
+          <p class="legal-intro">Rupestra es una aplicación de análisis de arte rupestre desarrollada por Collworks. Esta política explica qué datos recopila la aplicación, cómo los utiliza y los derechos que tienes como usuario.</p>
+          <div class="note-box legal-principle">
+            <strong>Principio fundamental</strong>
+            <p>Rupestra funciona completamente en tu dispositivo. No enviamos, almacenamos ni procesamos tus datos en ningún servidor externo. No existe registro de cuenta ni inicio de sesión.</p>
+          </div>
+        </header>
         <section>
           <h2>Datos que recopila la aplicación</h2>
           <p>Rupestra accede a los siguientes datos exclusivamente para su funcionamiento local:</p>
@@ -178,21 +184,32 @@
 
   <footer class="site-footer">
     <div class="container footer-center">
-      <div class="footer-brand">
-        <img src="logos/logo_rupestra_cruz.png" alt="" class="footer-mark" />
-        <div>
-          <strong>Rupestra</strong>
-          <span>Documentación visual rupestre</span>
-        </div>
-      </div>
       <nav class="footer-nav" aria-label="Enlaces de pie de página">
-        <a href="index.html">Inicio</a>
-        <a href="index.html#que-es">Qué es</a>
-        <a href="index.html#como-funciona">Cómo funciona</a>
         <a class="footer-link" href="Politica_de_Privacidad.html" aria-current="page">Política de privacidad</a>
         <a href="mailto:info@rupestra.com">Contacto</a>
+        <span class="footer-copy">&copy; 2026 Collworks</span>
       </nav>
     </div>
   </footer>
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const mainNav = document.getElementById("main-nav");
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      navToggle.classList.toggle("is-active", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen);
+      navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    });
+
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("is-open");
+        navToggle?.classList.remove("is-active");
+        navToggle?.setAttribute("aria-expanded", "false");
+        navToggle?.setAttribute("aria-label", "Abrir menú");
+      });
+    });
+  </script>
 </body>
 </html>

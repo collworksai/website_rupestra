@@ -9,20 +9,24 @@
   <meta property="og:title" content="Rupestra · Documentación visual rupestre" />
   <meta property="og:description" content="Herramienta de campo para identificar, resaltar y documentar pigmentos rupestres con análisis cromático y exportación de informes." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logos/logo_rupestra_cruz" />
-  <link rel="icon" type="image/png" href="logos/logo_rupestra_cruz.png" />
+  <meta property="og:image" content="logos/rupestra_logo_app.png" />
+  <link rel="icon" type="image/png" href="logos/rupestra_logo_app.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700;800&display=swap" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
   <header class="site-header">
-    <div class="brand-group">
-      <img src="logos/logo_rupestra_cruz.png" alt="Logo de Rupestra" class="brand-logo" />
+    <a class="brand-group" href="index.html" aria-label="Inicio de Rupestra">
+      <img src="logos/rupestra_logo_app.png" alt="Logo de Rupestra" class="brand-logo" />
       <div>
         <div class="brand-title">Rupestra</div>
         <p class="brand-subtitle">documentación visual rupestre</p>
       </div>
-    </div>
-    <nav class="hero-nav" aria-label="Navegación principal">
+    </a>
+    <nav class="hero-nav" id="main-nav" aria-label="Navegación principal">
       <a href="#que-es">Qué es</a>
       <a href="#para">Para quién</a>
       <a href="#como-funciona">Cómo funciona</a>
@@ -30,8 +34,13 @@
       <a href="#porque">Por qué</a>
       <a href="#agradecimientos">Agradecimientos</a>
     </nav>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
   </header>
-  <main class="page">
+  <main id="main-content" class="page">
     <section class="hero section-dark">
       <div class="hero-overlay"></div>
       <div class="container hero-inner">
@@ -39,7 +48,7 @@
           <div class="hero-copy">
             <span class="availability-chip">Próximamente en App Store</span>
             <h1>Revelar lo invisible. Documentar con rigor.</h1>
-            <p>Rupestra transforma la fotografía de campo en una herramienta de análisis y documentación, ayudando a detectar y resaltar posibles pigmentos rupestres mediante análisis cromático avanzado y procesamiento digital de imagen.</p></br>
+            <p>Rupestra transforma la fotografía de campo en una herramienta de análisis y documentación, ayudando a detectar y resaltar posibles pigmentos rupestres mediante análisis cromático avanzado y procesamiento digital de imagen.</p>
             <p>Nacida desde un equipo multidisciplinar vinculado a la conservación de cavidades, combina experiencia en espeleología, arqueología, geología e ingeniería de software para apoyar la observación, el registro y la generación de informes en cuevas, abrigos y entornos rupestres.</p>
             <div class="hero-actions">
               <a class="button button-primary" href="mailto:info@rupestra.com">Contactar sobre el proyecto</a>
@@ -53,7 +62,7 @@
               <div class="phone-shell">
                 <img
                   src="pantallazos_app/modo_automatico_de_pigmentos.PNG"
-                  alt="Pantallazo real de la app Rupestra mostrando la interfaz de análisis"
+                  alt="Interfaz de Rupestra mostrando el modo automático de detección de pigmentos"
                   class="app-screenshot"
                   width="1206"
                   height="2622"
@@ -76,11 +85,11 @@
               <div class="phone-shell">
                 <img
                   src="pantallazos_app/pantallazo_app_procesado.PNG"
-                  alt="Pantallazo real de la app Rupestra mostrando la interfaz de análisis"
+                  alt="Interfaz de Rupestra mostrando el resultado del procesado y análisis de imagen"
                   class="app-screenshot"
                   width="1206"
                   height="2622"
-                  fetchpriority="high"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -102,11 +111,10 @@
         </div>
       </div>
     </section>
-    <section section id="para" class="section section-alt">
+    <section id="para" class="section section-alt">
       <div class="container">
         <p class="section-label">Para quién está pensada</p>
         <h2>Diseñada para quienes documentan sobre roca.</h2>
-        <p></p>
         <div class="card-grid">
           <article class="feature-card">
             <div class="icon-box" aria-hidden="true">
@@ -181,7 +189,7 @@
             </span>
             <div>
               <h3>Documenta el resultado</h3>
-              <p>Guarda imágenes comparables -original, resaltado, calco y realce cromático- junto con coordenadas GPS, metadatos de cámara y notas de campo en un</p>
+              <p>Guarda imágenes comparables —original, resaltado, calco y realce cromático— junto con coordenadas GPS, metadatos de cámara y notas de campo en un informe técnico en PDF.</p>
             </div>
           </article>
         </div>
@@ -256,43 +264,43 @@
 
           <div class="carousel-track" data-carousel-track>
             <figure class="field-card" id="campo-01">
-              <img src="imagenes_carrousel/carrousel_05.jpg" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="eager" />
+              <img src="imagenes_carrousel/carrousel_05.jpg" alt="Exploración y observación de superficies rupestres en cavidad" class="field-photo" width="800" height="534" loading="eager" />
             </figure>
 
             <figure class="field-card" id="campo-02">
-              <img src="imagenes_carrousel/carrousel_08.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_08.JPG" alt="Equipo de documentación trabajando en el interior de una cueva" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-03">
-              <img src="imagenes_carrousel/Prokabaja_ubicacion_B_C.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/Prokabaja_ubicacion_B_C.JPG" alt="Localización de paneles con posibles restos de pigmentos en abrigo rocoso" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-04">
-              <img src="imagenes_carrousel/carrousel_09.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_09.JPG" alt="Registro fotográfico de superficie rocosa con indicios de pigmentación" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-05">
-              <img src="imagenes_carrousel/carrousel_07.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_07.JPG" alt="Trabajo de campo con iluminación en cavidad subterránea" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-06">
-              <img src="imagenes_carrousel/carrousel_02.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_02.JPG" alt="Detalle de pared rocosa durante sesión de documentación" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-07">
-              <img src="imagenes_carrousel/carrousel_04.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_04.JPG" alt="Espeleólogos accediendo a zona de interés en cavidad" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-08">
-              <img src="imagenes_carrousel/carrousel_06.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_06.JPG" alt="Observación de techo y paredes en cueva con posibles marcas" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-09">
-              <img src="imagenes_carrousel/carrousel_03.JPG" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_03.JPG" alt="Vista general de la entrada a abrigo rocoso en campo" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
 
             <figure class="field-card" id="campo-10">
-              <img src="imagenes_carrousel/carrousel_010.jpg" alt="Trabajo de campo de espeleología y documentación rupestre" class="field-photo" loading="lazy" />
+              <img src="imagenes_carrousel/carrousel_010.jpg" alt="Equipo de conservación revisando superficie con posibles restos pigmentarios" class="field-photo" width="800" height="534" loading="lazy" />
             </figure>
           </div>
 
@@ -319,7 +327,7 @@
       <div class="container">
         <p class="section-label">Agradecimientos</p>
         <div class="acknowledgement-layout">
-          <img src="imagenes/pedro_coll.jpg" alt="Retrato de Pedro Coll" class="acknowledgement-photo" />
+          <img src="imagenes/pedro_coll.jpg" alt="Retrato de Pedro Coll" class="acknowledgement-photo" loading="lazy" />
           <div class="acknowledgement-copy">
             <p>Rupestra ha ido tomando forma gracias a muchas conversaciones, pruebas en campo, comentarios y necesidades compartidas.</p>
             <p>Gracias a los miembros de la Comisión de Conservación de Cavidades de la Comunidad de Madrid por su paciencia, sus ideas, su tiempo y su disposición a probar, cuestionar y mejorar cada parte del proyecto.</p>
@@ -330,7 +338,7 @@
     </section>
     <section class="section-dark closing-section">
       <div class="container footer-center">
-        <img src="logos/logo_rupestra_cruz.png" alt="" class="footer-logo" />
+        <img src="logos/rupestra_logo_app.png" alt="" class="footer-logo" />
         <p class="section-label">Rupestra</p>
         <h2>Tecnología de campo para documentar lo invisible.</h2>
         <p class="section-text">Una app en evolución, nacida desde la experiencia real en cavidades y desarrollada con una mirada multidisciplinar para observar mejor, registrar con más orden y documentar con rigor posibles restos pigmentarios sobre roca.</p>
@@ -338,20 +346,15 @@
       </div>
     </section>
   </main>
+  <button class="back-to-top" type="button" aria-label="Volver arriba" id="back-to-top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0l-6 6m6-6l6 6" /></svg>
+  </button>
   <footer class="site-footer">
     <div class="container footer-center">
-      <div class="footer-brand">
-        <img src="logos/logo_rupestra_cruz.png" alt="" class="footer-mark" />
-        <div>
-          <strong>Rupestra</strong>
-          <span>Documentación visual rupestre</span>
-        </div>
-      </div>
       <nav class="footer-nav" aria-label="Enlaces de pie de página">
-        <a href="index.html#que-es">Qué es</a>
-        <a href="index.html#como-funciona">Cómo funciona</a>
         <a class="footer-link" href="Politica_de_Privacidad.html">Política de privacidad</a>
         <a href="mailto:info@rupestra.com">Contacto</a>
+        <span class="footer-copy">&copy; 2026 Collworks</span>
       </nav>
     </div>
   </footer>
@@ -397,6 +400,8 @@
     const carouselDots = Array.from(document.querySelectorAll("[data-carousel-dot]"));
     let carouselTimer;
 
+    let userSelectedIndex = -1;
+
     function scrollToCard(index) {
       const card = carouselCards[index];
 
@@ -404,8 +409,15 @@
         return;
       }
 
+      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      const target = Math.min(card.offsetLeft, maxScroll);
+
+      if (Math.abs(carouselTrack.scrollLeft - target) < 2) {
+        setActiveDot(index);
+      }
+
       carouselTrack.scrollTo({
-        left: card.offsetLeft,
+        left: target,
         behavior: "smooth",
       });
     }
@@ -421,6 +433,13 @@
         return 0;
       }
 
+      const maxScroll = carouselTrack.scrollWidth - carouselTrack.clientWidth;
+      const atEnd = carouselTrack.scrollLeft >= maxScroll - 2;
+
+      if (atEnd && userSelectedIndex >= 0) {
+        return userSelectedIndex;
+      }
+
       return carouselCards.reduce((closestIndex, card, index) => {
         const closestCard = carouselCards[closestIndex];
         const cardDistance = Math.abs(card.offsetLeft - carouselTrack.scrollLeft);
@@ -432,7 +451,9 @@
 
     function goToNextCard() {
       const currentIndex = getCurrentCardIndex();
-      scrollToCard((currentIndex + 1) % carouselCards.length);
+      const nextIndex = (currentIndex + 1) % carouselCards.length;
+      userSelectedIndex = nextIndex;
+      scrollToCard(nextIndex);
     }
 
     function startCarousel() {
@@ -450,18 +471,25 @@
     document.querySelector("[data-carousel-prev]")?.addEventListener("click", () => {
       stopCarousel();
       const currentIndex = getCurrentCardIndex();
-      scrollToCard((currentIndex - 1 + carouselCards.length) % carouselCards.length);
+      const prevIndex = (currentIndex - 1 + carouselCards.length) % carouselCards.length;
+      userSelectedIndex = prevIndex;
+      scrollToCard(prevIndex);
     });
 
     document.querySelector("[data-carousel-next]")?.addEventListener("click", () => {
       stopCarousel();
-      goToNextCard();
+      const currentIndex = getCurrentCardIndex();
+      const nextIndex = (currentIndex + 1) % carouselCards.length;
+      userSelectedIndex = nextIndex;
+      scrollToCard(nextIndex);
     });
 
     carouselDots.forEach((dot) => {
       dot.addEventListener("click", () => {
         stopCarousel();
-        scrollToCard(Number(dot.dataset.carouselDot));
+        const index = Number(dot.dataset.carouselDot);
+        userSelectedIndex = index;
+        scrollToCard(index);
       });
     });
 
@@ -469,11 +497,67 @@
       window.requestAnimationFrame(() => setActiveDot(getCurrentCardIndex()));
     });
 
-    carouselTrack?.addEventListener("pointerdown", stopCarousel);
+    carouselTrack?.addEventListener("pointerdown", () => {
+      userSelectedIndex = -1;
+      stopCarousel();
+    });
     carouselTrack?.addEventListener("focusin", stopCarousel);
 
     setActiveDot(0);
-    startCarousel();
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (!prefersReducedMotion.matches) {
+      startCarousel();
+    }
+    prefersReducedMotion.addEventListener("change", (e) => {
+      if (e.matches) { stopCarousel(); } else { startCarousel(); }
+    });
+
+    const navToggle = document.querySelector(".nav-toggle");
+    const mainNav = document.getElementById("main-nav");
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("is-open");
+      navToggle.classList.toggle("is-active", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen);
+      navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+    });
+
+    mainNav?.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("is-open");
+        navToggle?.classList.remove("is-active");
+        navToggle?.setAttribute("aria-expanded", "false");
+        navToggle?.setAttribute("aria-label", "Abrir menú");
+      });
+    });
+
+    const navLinks = mainNav ? Array.from(mainNav.querySelectorAll("a[href^='#']")) : [];
+    const sections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+
+    if (sections.length > 0) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => {
+                link.classList.toggle("is-active", link.getAttribute("href") === "#" + entry.target.id);
+              });
+            }
+          });
+        },
+        { rootMargin: "-40% 0px -55% 0px" }
+      );
+      sections.forEach((section) => observer.observe(section));
+    }
+
+    const backToTop = document.getElementById("back-to-top");
+    window.addEventListener("scroll", () => {
+      backToTop?.classList.toggle("is-visible", window.scrollY > 600);
+    }, { passive: true });
+    backToTop?.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   </script>
 </body>
 </html>
