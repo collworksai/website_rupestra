@@ -38,19 +38,18 @@
       "hero.h1": "Reveal the invisible. Document with rigour.",
       "hero.p1": "Rupestra transforms field photography into an analysis and documentation tool, helping to detect and enhance possible rock pigments through advanced chromatic analysis and digital image processing.",
       "hero.p2": "Born from a multidisciplinary team linked to cave conservation, it combines expertise in speleology, archaeology, geology and software engineering to support observation, recording and report generation in caves, rock shelters and rock art environments.",
-      "hero.cta": "Contact about the project",
+      "hero.cta": "Notify me at launch",
 
       // ── QUE ES ──
       "quees.label": "What is Rupestra?",
       "quees.h2": "A field tool for observing, analysing and recording pigments.",
-      "quees.p1": "Rupestra is an app that supports rock art documentation by combining advanced chromatic analysis, digital image processing and recording tools designed for fieldwork.",
-      "quees.p2": "The app allows you to photograph a surface, select a pigment type, analyse the image and generate a technical report with analysis images, GPS coordinates, camera metadata and field notes.",
-      "quees.p3": "Its system combines two lines of visual analysis: HSV colour-space detection, designed to identify and isolate specific pigments, and statistical colour decorrelation using PCA, aimed at enhancing degraded, faint or hard-to-see traces.",
-      "quees.feat.hsv": "<strong>HSV detection</strong> identifies and segments possible pigments by hue, saturation and brightness, with thresholds calibrated for red ochre, yellow ochre, violet red, black and white.",
-      "quees.feat.pca": "<strong>PCA chromatic enhancement</strong> offers 6 colour decorrelation modes to help reveal degraded pigments, weak contrasts or nearly imperceptible traces.",
-      "quees.feat.live": "<strong>Live scan</strong> lets you preview the pigment filter in real time on the camera before capturing the image.",
-      "quees.feat.pdf": "<strong>Technical PDF report</strong> gathers analysis images, GPS coordinates, EXIF photo metadata and field notes, including transcribed voice notes.",
-      "quees.feat.privacy": "<strong>Local processing and privacy</strong> keeps all analysis on the device, without generative AI and without sending images or data to external servers.",
+      "quees.p1": "Rupestra combines advanced chromatic analysis and digital image processing to help detect, enhance and document possible rock pigments directly in the field.",
+      "quees.feat.hsv": "<strong>HSV detection</strong> — segments pigments by hue, saturation and brightness with calibrated thresholds.",
+      "quees.feat.pca": "<strong>PCA enhancement</strong> — 6 colour decorrelation modes to reveal degraded or imperceptible traces.",
+      "quees.feat.live": "<strong>Live scan</strong> — preview the pigment filter in real time on the camera.",
+      "quees.feat.calibration": "<strong>Custom calibration</strong> — adjust detection thresholds to adapt the analysis to each surface and lighting condition.",
+      "quees.feat.pdf": "<strong>PDF report</strong> — images, GPS, EXIF metadata and field notes in one document.",
+      "quees.feat.privacy": "<strong>100 % local</strong> — all analysis on-device, no generative AI, no external servers.",
 
       // ── PARA QUIEN ──
       "para.label": "Who is it for",
@@ -76,6 +75,8 @@
       "como.step3.p": "Correct colour casts, calibrate detection or apply advanced chromatic enhancement to observe faint or barely perceptible traces.",
       "como.step4.h3": "Document the result",
       "como.step4.p": "Save comparable images — original, highlighted, tracing and chromatic enhancement — together with GPS coordinates, camera metadata and field notes in a technical PDF report.",
+      "como.step6.h3": "Custom calibration",
+      "como.step6.p": "Adjust hue, saturation and brightness thresholds to adapt detection to the lighting conditions and pigment type of each surface.",
 
       // ── EN VIVO ──
       "envivo.label": "Differential mode",
@@ -147,6 +148,32 @@
       "alt.campo08": "Observation of ceiling and walls in a cave with possible marks",
       "alt.campo09": "General view of the entrance to a rock shelter in the field",
       "alt.campo10": "Conservation team reviewing a surface with possible pigment remains",
+
+      // ── SRC (language-dependent assets) ──
+      "src.step1": "pantallazos_app/en/04_Init_Screen.png",
+      "src.step2": "pantallazos_app/en/03_Manual_Detection.png",
+      "src.step3": "pantallazos_app/en/01_PCA_Analisis.png",
+      "src.step4": "pantallazos_app/en/05_PDF_Report.png",
+      "src.step6": "pantallazos_app/en/02_Calibration.png",
+      "src.library": "pantallazos_app/en/06_Library.png",
+      "src.live-video": "videos/LiveMode_EN.mp4",
+      "src.hero-screenshot": "pantallazos_app/en/01_PCA_Analisis.png",
+      "src.quees-screenshot": "pantallazos_app/en/02_Calibration.png",
+
+      // ── COMO FUNCIONA ALT ──
+      "alt.step1": "Rupestra start screen showing Gallery, Camera and Live Scan options",
+      "alt.step2": "Manual pigment detection with eyedropper sampling on the image",
+      "alt.step3": "Calibration screen with real-time pigment detection adjustments",
+      "alt.step4": "Generated PDF report with GPS coordinates, metadata and analysis images",
+      "alt.step6": "Calibration screen with hue, saturation and brightness threshold adjustments",
+      "alt.library": "Session library with project organisation and iCloud sync",
+
+      // ── LIBRARY SHOWCASE ──
+      "library.h3": "Session library",
+      "library.p": "Organise your analyses by project. Sync across devices with iCloud.",
+
+      // ── PARTNERS ──
+      "porque.partners": "Developed in collaboration with field teams from:",
 
       // ── CAROUSEL CONTROLS ──
       "aria.carousel": "Fieldwork photo carousel",
@@ -294,6 +321,14 @@
       var key = el.getAttribute("data-i18n-alt");
       cacheSpanish(key, el.getAttribute("alt"));
       el.setAttribute("alt", dict && dict[key] ? dict[key] : spanishCache[key]);
+    });
+
+    document.querySelectorAll("[data-i18n-src]").forEach(function (el) {
+      var key = el.getAttribute("data-i18n-src");
+      cacheSpanish(key, el.getAttribute("src"));
+      var val = dict && dict[key] ? dict[key] : spanishCache[key];
+      el.setAttribute("src", val);
+      if (el.tagName === "VIDEO") el.load();
     });
 
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {

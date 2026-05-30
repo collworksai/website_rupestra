@@ -10,7 +10,9 @@
   <meta property="og:description" content="Herramienta de campo para identificar, resaltar y documentar pigmentos rupestres con análisis cromático y exportación de informes." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="logos/rupestra_logo_app.png" />
-  <link rel="icon" type="image/png" href="logos/rupestra_logo_app.png" />
+  <link rel="icon" href="favicon.ico" sizes="32x32" />
+  <link rel="icon" type="image/png" sizes="32x32" href="logos/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="logos/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;700;800&display=swap" />
@@ -57,7 +59,7 @@
             <p data-i18n="hero.p1">Rupestra transforma la fotografía de campo en una herramienta de análisis y documentación, ayudando a detectar y resaltar posibles pigmentos rupestres mediante análisis cromático avanzado y procesamiento digital de imagen.</p>
             <p data-i18n="hero.p2">Nacida desde un equipo multidisciplinar vinculado a la conservación de cavidades, combina experiencia en espeleología, arqueología, geología e ingeniería de software para apoyar la observación, el registro y la generación de informes en cuevas, abrigos y entornos rupestres.</p>
             <div class="hero-actions">
-              <a class="button button-primary" href="mailto:info@rupestra.com" data-i18n="hero.cta">Contactar sobre el proyecto</a>
+              <a class="button button-primary" href="mailto:info@rupestra.com" data-i18n="hero.cta">Avísame del lanzamiento</a>
             </div>
           </div>
 
@@ -67,8 +69,9 @@
               <div class="phone-glow phone-glow-right"></div>
               <div class="phone-shell">
                 <img
-                  src="pantallazos_app/modo_automatico_de_pigmentos.PNG"
-                  alt="Interfaz de Rupestra mostrando el modo automático de detección de pigmentos"
+                  src="pantallazos_app/es/01_Analisis_PCA_Resultado.png"
+                  data-i18n-src="src.hero-screenshot"
+                  alt="Resultado del análisis PCA en Rupestra: pigmentos rupestres revelados mediante decorrelación cromática"
                   data-i18n-alt="alt.screenshot-auto"
                   class="app-screenshot"
                   width="1206"
@@ -83,38 +86,34 @@
     </section>
 
     <section id="que-es" class="section section-light">
-      <div class="container section-grid">
-        <div>         
-           <div class="hero-panel">
-            <div class="phone-mockup">
-              <div class="phone-glow phone-glow-left"></div>
-              <div class="phone-glow phone-glow-right"></div>
-              <div class="phone-shell">
-                <img
-                  src="pantallazos_app/pantallazo_app_procesado.PNG"
-                  alt="Interfaz de Rupestra mostrando el resultado del procesado y análisis de imagen"
-                  data-i18n-alt="alt.screenshot-processed"
-                  class="app-screenshot"
-                  width="1206"
-                  height="2622"
-                  loading="lazy"
-                />
-              </div>
+      <div class="container">
+        <div class="quees-header">
+          <p class="section-label" data-i18n="quees.label">¿Qué es Rupestra?</p>
+          <h2 data-i18n="quees.h2">Una herramienta de campo para observar, analizar y registrar pigmentos.</h2>
+          <p class="quees-intro" data-i18n="quees.p1">Rupestra combina análisis cromático avanzado y procesamiento digital de imagen para ayudar a detectar, realzar y documentar posibles pigmentos rupestres directamente en campo.</p>
+        </div>
+        <div class="quees-grid">
+          <div class="phone-mockup phone-mockup-md">
+            <div class="phone-shell">
+              <img
+                src="pantallazos_app/es/02_Calibracion.png"
+                data-i18n-src="src.quees-screenshot"
+                alt="Interfaz de Rupestra mostrando la calibración y procesado de imagen"
+                data-i18n-alt="alt.screenshot-processed"
+                class="app-screenshot"
+                width="1206"
+                height="2622"
+                loading="lazy"
+              />
             </div>
           </div>
-        </div>
-        <div class="section-copy">
-           <p class="section-label" data-i18n="quees.label">¿Qué es Rupestra?</p>
-          <h2 data-i18n="quees.h2">Una herramienta de campo para observar, analizar y registrar pigmentos.</h2>
-          <p data-i18n="quees.p1">Rupestra es una aplicación de apoyo a la documentación de arte rupestre que combina análisis cromático avanzado, procesamiento digital de imagen y herramientas de registro diseñadas para el trabajo de campo.</p>
-          <p data-i18n="quees.p2">La app permite fotografiar una superficie, seleccionar un tipo de pigmento, analizar la imagen y generar un informe técnico con imágenes de análisis, coordenadas GPS, metadatos de cámara y notas de campo.</p>
-          <p data-i18n="quees.p3">Su sistema combina dos líneas de análisis visual: detección por espacio de color HSV, orientada a identificar y aislar pigmentos específicos, y decorrelación estadística de color mediante PCA, pensada para realzar trazos degradados, débiles o difíciles de apreciar a simple vista.</p>
           <ul class="feature-list">
-            <li data-i18n-html="quees.feat.hsv"><strong>Detección HSV</strong> identifica y segmenta posibles pigmentos por tono, saturación y brillo, con umbrales calibrados para rojo ocre, ocre amarillo, rojo violáceo, negro y blanco.</li>
-            <li data-i18n-html="quees.feat.pca"><strong>Realce cromático por PCA</strong> ofrece 6 modos de decorrelación de color para ayudar a revelar pigmentos degradados, contrastes débiles o trazos casi imperceptibles.</li>
-            <li data-i18n-html="quees.feat.live"><strong>Escaneo en vivo</strong> permite visualizar el filtro de pigmento en tiempo real sobre la cámara antes de capturar la imagen.</li>
-            <li data-i18n-html="quees.feat.pdf"><strong>Informe técnico en PDF</strong> reúne imágenes de análisis, coordenadas GPS, metadatos EXIF de la fotografía y notas de campo, incluyendo notas de voz transcritas.</li>
-            <li data-i18n-html="quees.feat.privacy"><strong>Procesamiento local y privacidad</strong> mantiene todo el análisis en el dispositivo, sin inteligencia artificial generativa y sin enviar imágenes ni datos a servidores externos.</li>
+            <li data-i18n-html="quees.feat.hsv"><strong>Detección HSV</strong> — segmenta pigmentos por tono, saturación y brillo con umbrales calibrados.</li>
+            <li data-i18n-html="quees.feat.pca"><strong>Realce PCA</strong> — 6 modos de decorrelación cromática para revelar trazos degradados o imperceptibles.</li>
+            <li data-i18n-html="quees.feat.live"><strong>Escaneo en vivo</strong> — visualiza el filtro de pigmento en tiempo real sobre la cámara.</li>
+            <li data-i18n-html="quees.feat.calibration"><strong>Calibración personalizada</strong> — ajusta los umbrales de detección para adaptar el análisis a cada superficie y condición de luz.</li>
+            <li data-i18n-html="quees.feat.pdf"><strong>Informe PDF</strong> — imágenes, GPS, metadatos EXIF y notas de campo en un solo documento.</li>
+            <li data-i18n-html="quees.feat.privacy"><strong>100 % local</strong> — todo el análisis en el dispositivo, sin IA generativa ni servidores externos.</li>
           </ul>
         </div>
       </div>
@@ -157,49 +156,89 @@
     </section>
 
     <section id="como-funciona" class="section section-light">
-      <div class="container section-grid">
-        <div>
-          <p class="section-label" data-i18n="como.label">Cómo funciona</p>
-          <h2 data-i18n="como.h2">Del indicio en la roca al informe técnico.</h2>
-          <p class="section-text" data-i18n="como.p">Rupestra organiza el análisis en pasos claros para acompañar el trabajo real en cavidades: desde una primera observación visual hasta la generación de documentación técnica útil para el análisis posterior.</p>
-        </div>
-        <div class="mode-grid">
-          <article class="mode-card">
-            <span class="mode-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></svg>
-            </span>
-            <div>
+      <div class="container">
+        <p class="section-label" data-i18n="como.label">Cómo funciona</p>
+        <h2 data-i18n="como.h2">Del indicio en la roca al informe técnico.</h2>
+        <p class="section-text" data-i18n="como.p">Rupestra organiza el análisis en pasos claros para acompañar el trabajo real en cavidades: desde una primera observación visual hasta la generación de documentación técnica útil para el análisis posterior.</p>
+
+        <div class="steps-grid">
+          <div class="step-row">
+            <div class="step-copy">
+              <span class="step-number">1</span>
               <h3 data-i18n="como.step1.h3">Captura o importa la imagen</h3>
               <p data-i18n="como.step1.p">Fotografía la superficie en campo o selecciona una imagen existente para iniciar el análisis.</p>
             </div>
-          </article>
-          <article class="mode-card">
-            <span class="mode-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l1.5 5L19 10l-5.5 2L12 17l-1.5-5L5 10l5.5-2z" /><path d="M19 17l.7 2.3L22 20l-2.3.7L19 23l-.7-2.3L16 20l2.3-.7z" /></svg>
-            </span>
-            <div>
+            <div class="phone-mockup phone-mockup-sm">
+              <div class="phone-shell">
+                <img src="pantallazos_app/es/04_Seleccion_Fuente.png" data-i18n-src="src.step1" alt="Pantalla de inicio de Rupestra con opciones de Galería, Cámara y En Vivo" data-i18n-alt="alt.step1" class="app-screenshot" width="1206" height="2622" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-copy">
+              <span class="step-number">2</span>
               <h3 data-i18n="como.step2.h3">Selecciona el pigmento</h3>
               <p data-i18n="como.step2.p">Elige entre pigmentos predefinidos o toma una muestra manual directamente sobre la imagen mediante el cuentagotas.</p>
             </div>
-          </article>
-          <article class="mode-card">
-            <span class="mode-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3 8-7 10-4-2-7-5-7-10V6z" /><path d="M9 12l2 2 4-5" /></svg>
-            </span>
-            <div>
+            <div class="phone-mockup phone-mockup-sm">
+              <div class="phone-shell">
+                <img src="pantallazos_app/es/03_seleccion_manual.png" data-i18n-src="src.step2" alt="Detección manual de pigmentos con cuentagotas sobre la imagen" data-i18n-alt="alt.step2" class="app-screenshot" width="1206" height="2622" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-copy">
+              <span class="step-number">3</span>
               <h3 data-i18n="como.step3.h3">Ajusta y realza</h3>
               <p data-i18n="como.step3.p">Corrige dominantes de color, calibra la detección o aplica realce cromático avanzado para observar trazos débiles o poco perceptibles.</p>
             </div>
-          </article>
-          <article class="mode-card">
-            <span class="mode-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z" /><path d="M3 12l9 5 9-5" /><path d="M3 16l9 5 9-5" /></svg>
-            </span>
-            <div>
+            <div class="phone-mockup phone-mockup-sm">
+              <div class="phone-shell">
+                <img src="pantallazos_app/es/01_Analisis_PCA_Resultado.png" data-i18n-src="src.step3" alt="Resultado del análisis PCA con pigmentos revelados mediante decorrelación cromática" data-i18n-alt="alt.step3" class="app-screenshot" width="1206" height="2622" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-copy">
+              <span class="step-number">4</span>
               <h3 data-i18n="como.step4.h3">Documenta el resultado</h3>
               <p data-i18n="como.step4.p">Guarda imágenes comparables —original, resaltado, calco y realce cromático— junto con coordenadas GPS, metadatos de cámara y notas de campo en un informe técnico en PDF.</p>
             </div>
-          </article>
+            <div class="phone-mockup phone-mockup-sm">
+              <div class="phone-shell">
+                <img src="pantallazos_app/es/05_Informe_PDF.png" data-i18n-src="src.step4" alt="Informe PDF generado con coordenadas GPS, metadatos e imágenes de análisis" data-i18n-alt="alt.step4" class="app-screenshot" width="1206" height="2622" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-copy">
+              <span class="step-number">5</span>
+              <h3 data-i18n="library.h3">Biblioteca de sesiones</h3>
+              <p data-i18n="library.p">Organiza tus análisis por proyectos. Sincronización entre dispositivos con iCloud.</p>
+            </div>
+            <div class="phone-mockup phone-mockup-sm">
+              <div class="phone-shell">
+                <img src="pantallazos_app/es/06_Biblioteca.png" data-i18n-src="src.library" alt="Biblioteca de sesiones con organización por proyectos y sincronización iCloud" data-i18n-alt="alt.library" class="app-screenshot" width="1206" height="2622" loading="lazy" />
+              </div>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-copy">
+              <span class="step-number">6</span>
+              <h3 data-i18n="como.step6.h3">Calibración personalizada</h3>
+              <p data-i18n="como.step6.p">Ajusta los umbrales de tono, saturación y brillo para adaptar la detección a las condiciones de luz y al tipo de pigmento de cada superficie.</p>
+            </div>
+            <div class="phone-mockup phone-mockup-sm">
+              <div class="phone-shell">
+                <img src="pantallazos_app/es/02_Calibracion.png" data-i18n-src="src.step6" alt="Pantalla de calibración con ajustes de detección en tiempo real" data-i18n-alt="alt.step6" class="app-screenshot" width="1206" height="2622" loading="lazy" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -226,7 +265,8 @@
           <div class="live-video-frame">
             <video
               class="live-video"
-              src="videos/modo_en_vivo.mp4"
+              src="videos/video_EnVivo_ES.mp4"
+              data-i18n-src="src.live-video"
               autoplay
               muted
               loop
@@ -252,6 +292,7 @@
             </div>
           </div>
           <div class="feature-box feature-box-dark">
+            <p class="partners-context" data-i18n="porque.partners">Desarrollada en colaboración con equipos de campo de:</p>
             <div class="partner-logos">
               <img src="logos/Logo_Conservacion_512.png" alt="Logo de Conservación de Cavidades de la Comunidad de Madrid" data-i18n-alt="alt.logo-conservacion" class="conservation-logo" />
               <img src="logos/FME.png" alt="Logo de la Federación Madrileña de Espeleología" data-i18n-alt="alt.logo-fme" class="fme-logo" />

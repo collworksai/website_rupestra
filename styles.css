@@ -422,8 +422,28 @@ button:focus-visible,
   align-items: start;
 }
 
-#que-es .section-grid {
+/* ── Qué es section ── */
+.quees-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.quees-intro {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.quees-grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 3rem;
   align-items: center;
+}
+
+.phone-mockup-md {
+  max-width: 260px;
 }
 
 .split-grid {
@@ -576,6 +596,75 @@ button:focus-visible,
 .feature-card p {
   margin: 0;
   color: var(--text-muted);
+}
+
+/* ── Steps grid (Cómo funciona with phone mockups) ── */
+.steps-grid {
+  display: grid;
+  gap: 3rem;
+}
+
+.step-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.step-row .step-copy {
+  order: 2;
+}
+
+.step-row .phone-mockup-sm {
+  order: 1;
+}
+
+.step-copy {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: rgba(139, 94, 60, 0.1);
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.step-copy h3 {
+  margin: 0.25rem 0 0;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.step-copy p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.phone-mockup-sm {
+  width: min(100%, 220px);
+  margin: 0 auto;
+}
+
+/* ── PCA showcase ── */
+
+
+/* ── Partners context ── */
+.partners-context {
+  margin-bottom: 1.25rem;
+  color: rgba(216, 200, 184, 0.85);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+  text-align: center;
 }
 
 .feature-box {
@@ -1149,9 +1238,16 @@ button:focus-visible,
   }
 
   .section-grid,
-  .split-grid {
+  .split-grid,
+  .step-row {
     grid-template-columns: 1fr;
   }
+
+  .step-row .step-copy,
+  .step-row .phone-mockup-sm {
+    order: unset;
+  }
+
 
   #en-vivo .split-grid {
     grid-template-columns: 1fr;
@@ -1264,6 +1360,16 @@ button:focus-visible,
 
   .field-photo {
     height: 19rem;
+  }
+
+  .quees-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: left;
+  }
+
+  .phone-mockup-md {
+    max-width: 200px;
   }
 }
 
